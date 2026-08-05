@@ -307,6 +307,11 @@ a{ color:inherit; }
   padding:1.6rem 1.8rem;
   box-shadow:var(--shadow);
   margin-bottom:1.6rem;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.content-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lift);
 }
 .content-card h2{ margin:.1rem 0 .6rem; font-size:1.2rem; font-weight:800; text-wrap:balance; }
 .content-card h3{ margin:1.2rem 0 .5rem; font-size:1rem; font-weight:800; }
@@ -339,6 +344,26 @@ a{ color:inherit; }
 .duty-table th{ background:var(--surface); border-radius:4px; }
 .duty-table td{ vertical-align:top; }
 
+.officer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.officer-card{
+  background:var(--surface);
+  border-radius:6px;
+  padding:1rem 1.1rem;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.officer-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lift);
+}
+.officer-card .role{ font-weight:800; font-size:.95rem; }
+.officer-card .name{ color:var(--ink-soft); font-size:.83rem; margin-left:.4rem; }
+.officer-card .scope{ margin:.4rem 0 0; font-size:.82rem; color:var(--ink-soft); }
+
 .subject-row, .video-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin:.6rem 0; }
 .subject{
   background:var(--surface); padding:.5rem .9rem; border-radius:999px; font-size:.85rem; font-weight:600;
@@ -355,6 +380,11 @@ a{ color:inherit; }
   flex:1 1 140px;
   box-shadow:var(--shadow);
   color:var(--ink-soft);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.video-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lift);
 }
 
 .board-footer{
@@ -470,6 +500,11 @@ a{ color:inherit; }
   display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
   background:var(--surface); border-radius:6px; padding:1.1rem 1.3rem;
   box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.download-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lift);
 }
 .download-card .dl-icon{
   flex:0 0 auto; width:44px; height:44px; border-radius:50%;
