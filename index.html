@@ -1,0 +1,544 @@
+<title>北斗國小 3年○班・班級基地</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.3 6.9 18l1.2-5.5-4.2-3.8 5.6-.6z"/>
+  </symbol>
+  <symbol id="ic-ribbon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="5"/><path d="M9 12.5 7 21l5-2.5L17 21l-2-8.5"/>
+  </symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.3 2.2 3.5 5.1 3.5 8.2s-1.2 6-3.5 8.2c-2.3-2.2-3.5-5.1-3.5-8.2S9.7 6 12 3.8z"/>
+  </symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="3.5" width="15" height="17" rx="1.8"/><path d="M8 12.3l2.6 2.6L16.4 9"/>
+  </symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.2" y="5.5" width="17.6" height="13" rx="1.6"/><path d="M4 6.5l8 6.2 8-6.2"/>
+  </symbol>
+  <symbol id="ic-frame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="1.2"/><circle cx="9" cy="9.5" r="1.8"/><path d="M4.5 17.5l5-5 3 3 3.5-4 4 6"/>
+  </symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5.5c-1.8-1.3-4.4-1.8-7-1.6v13.4c2.6-.2 5.2.3 7 1.6 1.8-1.3 4.4-1.8 7-1.6V3.9c-2.6-.2-5.2.3-7 1.6z"/><path d="M12 5.5v13.4"/>
+  </symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="5" width="17" height="15.5" rx="1.6"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13.2h2M11.5 13.2h2M15 13.2h2M8 16.6h2M11.5 16.6h2"/>
+  </symbol>
+</svg>
+
+<main class="board">
+
+  <header class="nameplate">
+    <div class="tape tape-l" aria-hidden="true"></div>
+    <div class="tape tape-r" aria-hidden="true"></div>
+    <p class="eyebrow">Class Homeroom · 班級經營網站提案</p>
+    <h1>北斗國小 <span class="blank">3年○班</span>・班級基地</h1>
+    <p class="tagline">節慶、榮譽、雙語、閱讀，通通釘在同一塊布告欄上</p>
+  </header>
+
+  <section class="stat-strip" aria-label="本週重點">
+    <button class="chip chip-mustard" data-goto="honor">
+      <span class="chip-label">榮譽榜第一名</span>
+      <span class="chip-value">小安　128 點</span>
+    </button>
+    <button class="chip chip-sage" data-goto="duty">
+      <span class="chip-label">今日值日生</span>
+      <span class="chip-value">澆花・小豪　擦黑板・小晴</span>
+    </button>
+    <button class="chip chip-coral" data-goto="festival">
+      <span class="chip-label">節慶倒數</span>
+      <span class="chip-value">距離中秋活動週　還有 12 天</span>
+    </button>
+  </section>
+
+  <section class="grid" aria-label="班級網站分區">
+
+    <button class="card card-coral" style="--tilt:-2deg" data-target="festival" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-star"/></svg>
+      <h2>節慶好朋友日</h2>
+      <p>應景活動、DIY 材料清單、活動花絮回顧</p>
+    </button>
+
+    <button class="card card-mustard" style="--tilt:1.5deg" data-target="honor" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-ribbon"/></svg>
+      <h2>榮譽存摺</h2>
+      <p>整潔、發表、助人集點，排行榜每週更新</p>
+    </button>
+
+    <button class="card card-sky" style="--tilt:-1deg" data-target="bilingual" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-globe"/></svg>
+      <h2>雙語練功坊</h2>
+      <p>每週一字、英文歌曲、口說小任務</p>
+    </button>
+
+    <button class="card card-sky" style="--tilt:2.5deg" data-target="review" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-check"/></svg>
+      <h2>學科複習站</h2>
+      <p>國語、數學、英語、自然，闖關式複習遊戲</p>
+    </button>
+
+    <button class="card card-sage" style="--tilt:-2.5deg" data-target="familyvoice" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-mail"/></svg>
+      <h2>親師交流布告欄</h2>
+      <p>公告、聯絡簿補充、活動影片牆</p>
+    </button>
+
+    <button class="card card-lavender" style="--tilt:1.8deg" data-target="gallery" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-frame"/></svg>
+      <h2>作品展覽館</h2>
+      <p>日記、美勞、寫作投稿，孩子的舞台</p>
+    </button>
+
+    <button class="card card-coral" style="--tilt:2deg" data-target="reading" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-book"/></svg>
+      <h2>閱讀存摺</h2>
+      <p>借閱紀錄、本月共讀書單、心得分享牆</p>
+    </button>
+
+    <button class="card card-mustard" style="--tilt:-1.5deg" data-target="duty" aria-expanded="false">
+      <svg class="card-icon" width="26" height="26"><use href="#ic-calendar"/></svg>
+      <h2>值日生輪值表</h2>
+      <p>一週工作分配，點開就知道今天輪到誰</p>
+    </button>
+
+  </section>
+
+  <section class="detail-wrap" id="detailWrap" hidden>
+    <div class="detail-card">
+      <button class="detail-close" id="detailClose" aria-label="關閉">✕</button>
+      <div id="detailBody"></div>
+    </div>
+  </section>
+
+  <footer class="board-footer">
+    <p>這是網站內容規劃提案，點卡片可以看每一區的示範內容 — 之後可依實際班級調整文字與照片。</p>
+  </footer>
+</main>
+
+<template id="tpl-festival">
+  <p class="eyebrow eyebrow-coral">節慶好朋友日</p>
+  <h3>中秋節主題週</h3>
+  <p class="detail-lede">距離活動週還有 <strong>12 天</strong>，材料請提前準備。</p>
+  <ul class="detail-list">
+    <li><span class="tag tag-coral">週一</span> 柚子燈籠 DIY（材料：柚子皮、竹籤、毛根）</li>
+    <li><span class="tag tag-coral">週三</span> 班級月餅分享會（自備或班費採買）</li>
+    <li><span class="tag tag-coral">週五</span> 猜燈謎大賽（贏家可獲得榮譽點數 +5）</li>
+  </ul>
+  <p class="detail-note">往期回顧：端午節詩籤創作、母親節卡片工作坊</p>
+</template>
+
+<template id="tpl-honor">
+  <p class="eyebrow eyebrow-mustard">榮譽存摺</p>
+  <h3>本週排行榜</h3>
+  <table class="detail-table">
+    <tr><td class="rank">1</td><td>小安</td><td class="pts">128 點</td></tr>
+    <tr><td class="rank">2</td><td>小豪</td><td class="pts">115 點</td></tr>
+    <tr><td class="rank">3</td><td>小晴</td><td class="pts">109 點</td></tr>
+  </table>
+  <p class="detail-note">集點方式：桌面整潔 +2・主動發表 +3・幫助同學 +3・累積 100 點可兌換小獎勵</p>
+</template>
+
+<template id="tpl-bilingual">
+  <p class="eyebrow eyebrow-sky">雙語練功坊</p>
+  <h3>本週單字：harvest（收穫）</h3>
+  <p class="detail-lede">例句：We harvest rice in autumn. 我們在秋天收割稻米。</p>
+  <ul class="detail-list">
+    <li><span class="tag tag-sky">歌曲</span> Autumn Leaves are Falling — 跟唱＋動作示範影片</li>
+    <li><span class="tag tag-sky">口說任務</span> 錄一段 15 秒自我介紹，上傳給老師聽</li>
+  </ul>
+</template>
+
+<template id="tpl-review">
+  <p class="eyebrow eyebrow-sky">學科複習站</p>
+  <h3>依科目挑選複習關卡</h3>
+  <div class="subject-row">
+    <span class="subject">國語｜成語接龍</span>
+    <span class="subject">數學｜心臟病心算</span>
+    <span class="subject">英語｜單字賓果</span>
+    <span class="subject">自然｜植物大考驗</span>
+  </div>
+  <p class="detail-note">每個關卡約 10 題，答對可累積榮譽點數，連結至<span class="tag tag-sky">學科複習站</span>對應頁面。</p>
+</template>
+
+<template id="tpl-familyvoice">
+  <p class="eyebrow eyebrow-sage">親師交流布告欄</p>
+  <h3>最新公告</h3>
+  <ul class="detail-list">
+    <li><span class="tag tag-sage">週二</span> 本週五校外教學，請攜帶雨具</li>
+    <li><span class="tag tag-sage">週四</span> 數學習作第 3 單元請家長簽名</li>
+  </ul>
+  <h3 class="mt">活動影片牆</h3>
+  <div class="video-row">
+    <div class="video-card">校外教學花絮</div>
+    <div class="video-card">運動會精華</div>
+    <div class="video-card">母親節活動</div>
+  </div>
+</template>
+
+<template id="tpl-gallery">
+  <p class="eyebrow eyebrow-lavender">作品展覽館</p>
+  <h3>本月精選</h3>
+  <div class="video-row">
+    <div class="video-card">國語小日記精選</div>
+    <div class="video-card">黏土作品：我的寵物</div>
+    <div class="video-card">寫作投稿：我的夢想</div>
+  </div>
+  <p class="detail-note">每位小朋友都能投稿，老師精選展示於此區。</p>
+</template>
+
+<template id="tpl-reading">
+  <p class="eyebrow eyebrow-coral">閱讀存摺</p>
+  <h3>本月共讀：《晴空小侍郎》</h3>
+  <ul class="detail-list">
+    <li><span class="tag tag-coral">借閱王</span> 小華 本月已借閱 6 本</li>
+    <li><span class="tag tag-coral">心得分享</span> 小安：「原來雲豹是這樣消失的…」</li>
+  </ul>
+</template>
+
+<template id="tpl-duty">
+  <p class="eyebrow eyebrow-mustard">值日生輪值表</p>
+  <h3>本週工作分配</h3>
+  <table class="detail-table duty-table">
+    <tr><th>週一</th><th>週二</th><th>週三</th><th>週四</th><th>週五</th></tr>
+    <tr><td>小豪<br><span class="detail-note">澆花</span></td><td>小晴<br><span class="detail-note">擦黑板</span></td><td>小安<br><span class="detail-note">收作業</span></td><td>小華<br><span class="detail-note">關電燈</span></td><td>小恩<br><span class="detail-note">整隊</span></td></tr>
+  </table>
+</template>
+
+<style>
+:root{
+  --bg:#e4d3ac;
+  --bg-fiber: rgba(59,42,31,.05);
+  --surface:#fbf6ec;
+  --surface-2:#f2e6cc;
+  --ink:#3b2a1f;
+  --ink-soft:#6b5a46;
+  --pine:#3f6653;
+  --pine-ink:#fbf6ec;
+  --ring: #3f6653;
+
+  --coral:#e2634f;   --coral-ink:#fff7f2;
+  --mustard:#c98a1f; --mustard-ink:#2c2010;
+  --sky:#3e7ca0;     --sky-ink:#fbf9f2;
+  --sage:#5d8156;    --sage-ink:#fbf9f2;
+  --lavender:#7c6796; --lavender-ink:#fbf6ec;
+
+  --shadow: 0 10px 22px -12px rgba(59,42,31,.45);
+  --shadow-lift: 0 18px 30px -14px rgba(59,42,31,.55);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#211d17;
+    --bg-fiber: rgba(255,246,230,.045);
+    --surface:#332c22;
+    --surface-2:#3c3327;
+    --ink:#f1e7d3;
+    --ink-soft:#c9bba1;
+    --pine:#84b79c;
+    --pine-ink:#1c261f;
+    --ring:#84b79c;
+
+    --coral:#e88574;    --coral-ink:#2a1310;
+    --mustard:#e0ac4c;  --mustard-ink:#2a1e08;
+    --sky:#6facc9;      --sky-ink:#0f2029;
+    --sage:#85ad79;     --sage-ink:#132015;
+    --lavender:#a692c4; --lavender-ink:#1d1726;
+
+    --shadow: 0 10px 24px -12px rgba(0,0,0,.55);
+    --shadow-lift: 0 20px 34px -14px rgba(0,0,0,.65);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#211d17; --bg-fiber: rgba(255,246,230,.045);
+  --surface:#332c22; --surface-2:#3c3327;
+  --ink:#f1e7d3; --ink-soft:#c9bba1;
+  --pine:#84b79c; --pine-ink:#1c261f; --ring:#84b79c;
+  --coral:#e88574; --coral-ink:#2a1310;
+  --mustard:#e0ac4c; --mustard-ink:#2a1e08;
+  --sky:#6facc9; --sky-ink:#0f2029;
+  --sage:#85ad79; --sage-ink:#132015;
+  --lavender:#a692c4; --lavender-ink:#1d1726;
+  --shadow: 0 10px 24px -12px rgba(0,0,0,.55);
+  --shadow-lift: 0 20px 34px -14px rgba(0,0,0,.65);
+}
+:root[data-theme="light"]{
+  --bg:#e4d3ac; --bg-fiber: rgba(59,42,31,.05);
+  --surface:#fbf6ec; --surface-2:#f2e6cc;
+  --ink:#3b2a1f; --ink-soft:#6b5a46;
+  --pine:#3f6653; --pine-ink:#fbf6ec; --ring:#3f6653;
+  --coral:#e2634f; --coral-ink:#fff7f2;
+  --mustard:#c98a1f; --mustard-ink:#2c2010;
+  --sky:#3e7ca0; --sky-ink:#fbf9f2;
+  --sage:#5d8156; --sage-ink:#fbf9f2;
+  --lavender:#7c6796; --lavender-ink:#fbf6ec;
+  --shadow: 0 10px 22px -12px rgba(59,42,31,.45);
+  --shadow-lift: 0 18px 30px -14px rgba(59,42,31,.55);
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 1px 1px, var(--bg-fiber) 1px, transparent 1.4px) 0 0/14px 14px,
+    var(--bg);
+  font-family: "PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,-apple-system,sans-serif;
+  line-height:1.6;
+}
+.board{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.5rem 1.25rem 4rem;
+}
+
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.14em;
+  color:var(--ink-soft);
+  margin:0 0 .35rem;
+  text-transform:uppercase;
+}
+.eyebrow-coral{color:var(--coral)}
+.eyebrow-mustard{color:var(--mustard)}
+.eyebrow-sky{color:var(--sky)}
+.eyebrow-sage{color:var(--sage)}
+.eyebrow-lavender{color:var(--lavender)}
+
+/* ---------- nameplate ---------- */
+.nameplate{
+  position:relative;
+  background:var(--surface);
+  border-radius:2px;
+  padding:1.8rem 2rem 1.6rem;
+  text-align:center;
+  box-shadow:var(--shadow);
+  margin-bottom:1.75rem;
+  clip-path: polygon(0% 1.5%, 4% 0%, 96% 0.5%, 100% 2%, 99.5% 97%, 95% 100%, 5% 99.3%, 0.5% 96%);
+}
+.nameplate h1{
+  margin:.1rem 0 .5rem;
+  font-size:clamp(1.5rem,4vw,2.15rem);
+  font-weight:800;
+  letter-spacing:.02em;
+  text-wrap:balance;
+}
+.nameplate .blank{
+  border-bottom:3px solid var(--pine);
+  padding:0 .15em;
+}
+.tagline{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:.95rem;
+}
+.tape{
+  position:absolute;
+  top:-14px;
+  width:76px;
+  height:28px;
+  background:repeating-linear-gradient(45deg, rgba(255,255,255,.35) 0 6px, rgba(255,255,255,.12) 6px 12px), var(--mustard);
+  opacity:.85;
+  box-shadow:0 3px 6px rgba(0,0,0,.18);
+}
+.tape-l{ left:8%; transform:rotate(-8deg); }
+.tape-r{ right:8%; transform:rotate(7deg); background:repeating-linear-gradient(45deg, rgba(255,255,255,.35) 0 6px, rgba(255,255,255,.12) 6px 12px), var(--sky); }
+
+/* ---------- stat strip ---------- */
+.stat-strip{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:.9rem;
+  margin-bottom:2rem;
+}
+.chip{
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  border:none;
+  border-radius:2px;
+  padding:.85rem 1rem;
+  color:var(--ink);
+  background:var(--surface-2);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:.2rem;
+  transition:transform .15s ease;
+}
+.chip:hover{ transform:translateY(-2px); }
+.chip:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+.chip-label{ font-size:.72rem; letter-spacing:.08em; color:var(--ink-soft); text-transform:uppercase;}
+.chip-value{ font-weight:700; font-size:.98rem; }
+.chip-mustard{ border-left:6px solid var(--mustard); }
+.chip-sage{ border-left:6px solid var(--sage); }
+.chip-coral{ border-left:6px solid var(--coral); }
+
+/* ---------- card grid ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:1.6rem 1.3rem;
+  margin-bottom:1rem;
+}
+.card{
+  position:relative;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  border:none;
+  background:var(--surface);
+  border-radius:2px;
+  padding:1.5rem 1.2rem 1.3rem;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+  transform:rotate(var(--tilt,0deg));
+  transition:transform .18s ease, box-shadow .18s ease;
+  clip-path: polygon(0 2%, 3% 0, 97% 0.6%, 100% 3%, 99% 98%, 96% 100%, 4% 99.4%, 1% 97%);
+}
+.card::before{
+  content:"";
+  position:absolute;
+  top:-10px; left:50%;
+  width:52px; height:20px;
+  transform:translateX(-50%) rotate(-3deg);
+  background:repeating-linear-gradient(45deg, rgba(255,255,255,.35) 0 5px, rgba(255,255,255,.1) 5px 10px), var(--accent);
+  opacity:.8;
+}
+.card:hover, .card:focus-visible{
+  transform:rotate(0deg) translateY(-4px) scale(1.015);
+  box-shadow:var(--shadow-lift);
+}
+.card:focus-visible{ outline:3px solid var(--ring); outline-offset:3px; }
+.card[aria-expanded="true"]{
+  transform:rotate(0deg) translateY(-4px) scale(1.015);
+  box-shadow:var(--shadow-lift);
+}
+.card-icon{ color:var(--accent); margin-bottom:.5rem; }
+.card h2{ margin:0 0 .3rem; font-size:1.08rem; font-weight:800; }
+.card p{ margin:0; font-size:.85rem; color:var(--ink-soft); }
+
+.card-coral{ --accent:var(--coral); }
+.card-mustard{ --accent:var(--mustard); }
+.card-sky{ --accent:var(--sky); }
+.card-sage{ --accent:var(--sage); }
+.card-lavender{ --accent:var(--lavender); }
+
+/* ---------- detail panel ---------- */
+.detail-wrap{ margin:1.5rem 0 2rem; }
+.detail-card{
+  position:relative;
+  background:var(--surface-2);
+  border-radius:6px;
+  padding:1.8rem 2rem;
+  box-shadow:var(--shadow-lift);
+  animation:pop .18s ease;
+}
+@media (prefers-reduced-motion: reduce){ .detail-card{ animation:none; } }
+@keyframes pop{ from{ opacity:0; transform:translateY(-6px);} to{opacity:1; transform:translateY(0);} }
+
+.detail-close{
+  position:absolute; top:1rem; right:1rem;
+  width:32px;height:32px;
+  border-radius:50%;
+  border:none;
+  background:var(--surface);
+  color:var(--ink-soft);
+  cursor:pointer;
+  font-size:.95rem;
+  box-shadow:var(--shadow);
+}
+.detail-close:hover{ color:var(--ink); }
+.detail-close:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+
+.detail-card h3{ margin:.1rem 0 .6rem; font-size:1.25rem; font-weight:800; text-wrap:balance; }
+.detail-card h3.mt{ margin-top:1.4rem; }
+.detail-lede{ margin:0 0 .8rem; }
+.detail-list{ margin:0 0 .6rem; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:.5rem; max-width:60ch; }
+.detail-note{ color:var(--ink-soft); font-size:.85rem; margin:.4rem 0 0; }
+
+.tag{
+  display:inline-block;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  padding:.15rem .5rem;
+  border-radius:999px;
+  margin-right:.4rem;
+}
+.tag-coral{ background:var(--coral); color:var(--coral-ink); }
+.tag-mustard{ background:var(--mustard); color:var(--mustard-ink); }
+.tag-sky{ background:var(--sky); color:var(--sky-ink); }
+.tag-sage{ background:var(--sage); color:var(--sage-ink); }
+
+.detail-table{ border-collapse:collapse; font-variant-numeric:tabular-nums; }
+.detail-table td, .detail-table th{ padding:.4rem .9rem; text-align:left; }
+.detail-table .rank{ font-weight:800; color:var(--mustard); }
+.detail-table .pts{ font-weight:700; }
+.detail-table tr:not(:last-child) td, .detail-table tr:not(:last-child) th{ border-bottom:1px solid var(--surface); }
+.duty-table{ width:100%; text-align:center; }
+.duty-table th{ background:var(--surface); border-radius:4px; }
+.duty-table td{ vertical-align:top; }
+
+.subject-row, .video-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin:.6rem 0; }
+.subject{
+  background:var(--surface); padding:.5rem .9rem; border-radius:999px; font-size:.85rem; font-weight:600;
+  box-shadow:var(--shadow);
+}
+.video-card{
+  background:var(--surface);
+  padding:1.6rem 1rem;
+  border-radius:4px;
+  font-size:.82rem;
+  font-weight:600;
+  text-align:center;
+  min-width:120px;
+  flex:1 1 140px;
+  box-shadow:var(--shadow);
+  color:var(--ink-soft);
+}
+
+.board-footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:.82rem;
+  margin-top:2.5rem;
+}
+</style>
+
+<script>
+(function(){
+  var wrap = document.getElementById('detailWrap');
+  var body = document.getElementById('detailBody');
+  var closeBtn = document.getElementById('detailClose');
+  var cards = document.querySelectorAll('.card[data-target]');
+  var chips = document.querySelectorAll('.chip[data-goto]');
+
+  function open(id, sourceEl){
+    var tpl = document.getElementById('tpl-' + id);
+    if(!tpl) return;
+    cards.forEach(function(c){ c.setAttribute('aria-expanded', c.dataset.target === id ? 'true' : 'false'); });
+    body.innerHTML = '';
+    body.appendChild(tpl.content.cloneNode(true));
+    wrap.hidden = false;
+    wrap.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'nearest'});
+  }
+  function close(){
+    wrap.hidden = true;
+    cards.forEach(function(c){ c.setAttribute('aria-expanded','false'); });
+  }
+
+  cards.forEach(function(c){
+    c.addEventListener('click', function(){
+      if(c.getAttribute('aria-expanded') === 'true'){ close(); }
+      else{ open(c.dataset.target, c); }
+    });
+  });
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){ open(c.dataset.goto, c); });
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+})();
+</script>
