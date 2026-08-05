@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <title>北斗國小 3年○班・班級基地</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="北斗國小3年○班班級經營網站：節慶活動、榮譽存摺、雙語練功坊與親師溝通，一站掌握。" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,84 +25,180 @@
     </div>
   </nav>
 
-  <header class="nameplate">
+  <!-- Hero -->
+  <header class="hero">
     <div class="tape tape-l" aria-hidden="true"></div>
     <div class="tape tape-r" aria-hidden="true"></div>
-    <p class="eyebrow">Class Homeroom · 班級經營網站</p>
-    <h1>北斗國小 <span class="blank">3年○班</span>・班級基地</h1>
-    <p class="tagline">節慶、榮譽、雙語、閱讀，通通釘在同一塊布告欄上</p>
+    <div class="hero-text">
+      <p class="eyebrow">Class Homeroom · 班級經營網站</p>
+      <h1>北斗國小 <span class="blank">3年○班</span>・班級基地</h1>
+      <p class="hero-en">A warm corner where festivals, honor points, and bilingual learning live together.</p>
+      <p class="tagline">給家長：隨時掌握班上公告與活動；給孩子：每天花五分鐘，把學過的內容再複習一次。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="pages/familyvoice.html">
+          給家長：查看最新公告
+        </a>
+        <a class="btn btn-ghost" href="pages/review.html">
+          給學生：開始今日複習
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-placeholder">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.2A1.8 1.8 0 0 1 5.8 6.4h1.4l.8-1.6h8l.8 1.6h1.4A1.8 1.8 0 0 1 20 8.2v9A1.8 1.8 0 0 1 18.2 19H5.8A1.8 1.8 0 0 1 4 17.2z"/><circle cx="12" cy="12.6" r="3.4"/></svg>
+        <span class="ph-label">教室日常照片位置<span class="en">Classroom photo placeholder</span></span>
+      </div>
+    </div>
   </header>
 
-  <section class="stat-strip" aria-label="本週重點">
-    <a class="chip chip-mustard" href="pages/honor.html">
-      <span class="chip-label">榮譽榜第一名</span>
-      <span class="chip-value">小安　128 點</span>
-    </a>
-    <a class="chip chip-sage" href="pages/duty.html">
-      <span class="chip-label">今日值日生</span>
-      <span class="chip-value">澆花・小豪　擦黑板・小晴</span>
-    </a>
-    <a class="chip chip-coral" href="pages/festival.html">
-      <span class="chip-label">節慶倒數</span>
-      <span class="chip-value">距離中秋活動週　還有 12 天</span>
-    </a>
+  <!-- Mission -->
+  <section class="content-card reveal" aria-labelledby="mission-h">
+    <p class="eyebrow">Our Mission · 我們的理念</p>
+    <h2 id="mission-h">讓學習與陪伴，成為班級生活的日常<span class="bi-en">Making learning and care part of everyday class life.</span></h2>
+    <p class="content-lede">這個網站想解決兩件事：讓家長不必追著聯絡簿也能掌握班上大小事，也讓孩子在家也能像在教室一樣，輕鬆複習學過的內容。<span class="bi-en">We want parents to stay in the loop without chasing the contact book, and students to keep reviewing as easily at home as in class.</span></p>
+    <div class="mission-values">
+      <div class="mission-value">
+        <span class="mv-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.8 8 3.4 5 6.6 5c1.8 0 3.2 1 4 2.4C11.4 6 12.8 5 14.6 5c3.2 0 4.8 3 3.8 6.2C16.7 15.9 12 20.5 12 20.5z"/></svg></span>
+        <div><strong>陪伴<span class="bi-en">Care</span></strong></div>
+      </div>
+      <div class="mission-value">
+        <span class="mv-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10M12 10C12 6 9 4 5 4c0 4 2.5 6.5 7 6.5M12 10c0-4 3-6 7-6 0 4-2.5 6.5-7 6.5"/></svg></span>
+        <div><strong>成長<span class="bi-en">Growth</span></strong></div>
+      </div>
+      <div class="mission-value">
+        <span class="mv-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 12.5 4 17a2.8 2.8 0 0 0 4 4l4.5-4.5M15.5 11.5 20 7a2.8 2.8 0 0 0-4-4l-4.5 4.5M9 15l6-6"/></svg></span>
+        <div><strong>連結<span class="bi-en">Connection</span></strong></div>
+      </div>
+    </div>
   </section>
+
+  <!-- Services -->
+  <div class="section-head reveal">
+    <p class="eyebrow">What We Offer</p>
+    <h2>我們提供的服務<span class="bi-en">Everything the class site has to offer.</span></h2>
+  </div>
 
   <section class="grid" aria-label="班級網站分區">
 
-    <a class="card card-coral" style="--tilt:-2deg" href="pages/festival.html">
+    <a class="card card-coral reveal" style="--tilt:-2deg" href="pages/festival.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.3 6.9 18l1.2-5.5-4.2-3.8 5.6-.6z"/></svg>
-      <h2>節慶好朋友日</h2>
-      <p>應景活動、DIY 材料清單、活動花絮回顧</p>
+      <h3>節慶好朋友日</h3>
+      <p>應景活動、DIY 材料清單、活動花絮回顧<span class="bi-en">Seasonal class activities & recaps</span></p>
     </a>
 
-    <a class="card card-mustard" style="--tilt:1.5deg" href="pages/honor.html">
+    <a class="card card-mustard reveal" style="--tilt:1.5deg" href="pages/honor.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M9 12.5 7 21l5-2.5L17 21l-2-8.5"/></svg>
-      <h2>榮譽存摺</h2>
-      <p>整潔、發表、助人集點，排行榜每週更新</p>
+      <h3>榮譽存摺</h3>
+      <p>整潔、發表、助人集點，排行榜每週更新<span class="bi-en">Weekly honor point leaderboard</span></p>
     </a>
 
-    <a class="card card-sky" style="--tilt:-1deg" href="pages/bilingual.html">
+    <a class="card card-sky reveal" style="--tilt:-1deg" href="pages/bilingual.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.3 2.2 3.5 5.1 3.5 8.2s-1.2 6-3.5 8.2c-2.3-2.2-3.5-5.1-3.5-8.2S9.7 6 12 3.8z"/></svg>
-      <h2>雙語練功坊</h2>
-      <p>每週一字、英文歌曲、口說小任務</p>
+      <h3>雙語練功坊</h3>
+      <p>每週一字、英文歌曲、口說小任務<span class="bi-en">Weekly word, song & speaking task</span></p>
     </a>
 
-    <a class="card card-sky" style="--tilt:2.5deg" href="pages/review.html">
+    <a class="card card-sky reveal" style="--tilt:2.5deg" href="pages/review.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="1.8"/><path d="M8 12.3l2.6 2.6L16.4 9"/></svg>
-      <h2>學科複習站</h2>
-      <p>國語、數學、英語、自然，闖關式複習遊戲</p>
+      <h3>學科複習站</h3>
+      <p>國語、數學、英語、自然，闖關式複習遊戲<span class="bi-en">Game-style review, plus downloads</span></p>
     </a>
 
-    <a class="card card-sage" style="--tilt:-2.5deg" href="pages/familyvoice.html">
+    <a class="card card-sage reveal" style="--tilt:-2.5deg" href="pages/familyvoice.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="5.5" width="17.6" height="13" rx="1.6"/><path d="M4 6.5l8 6.2 8-6.2"/></svg>
-      <h2>親師交流布告欄</h2>
-      <p>公告、聯絡簿補充、活動影片牆</p>
+      <h3>親師交流布告欄</h3>
+      <p>公告、聯絡簿補充、活動影片牆，可搜尋查詢<span class="bi-en">Searchable announcements & video wall</span></p>
     </a>
 
-    <a class="card card-lavender" style="--tilt:1.8deg" href="pages/gallery.html">
+    <a class="card card-lavender reveal" style="--tilt:1.8deg" href="pages/gallery.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="1.2"/><circle cx="9" cy="9.5" r="1.8"/><path d="M4.5 17.5l5-5 3 3 3.5-4 4 6"/></svg>
-      <h2>作品展覽館</h2>
-      <p>日記、美勞、寫作投稿，孩子的舞台</p>
+      <h3>作品展覽館</h3>
+      <p>日記、美勞、寫作投稿，孩子的舞台<span class="bi-en">Student work on display</span></p>
     </a>
 
-    <a class="card card-coral" style="--tilt:2deg" href="pages/reading.html">
+    <a class="card card-coral reveal" style="--tilt:2deg" href="pages/reading.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.8-1.3-4.4-1.8-7-1.6v13.4c2.6-.2 5.2.3 7 1.6 1.8-1.3 4.4-1.8 7-1.6V3.9c-2.6-.2-5.2.3-7 1.6z"/><path d="M12 5.5v13.4"/></svg>
-      <h2>閱讀存摺</h2>
-      <p>借閱紀錄、本月共讀書單、心得分享牆</p>
+      <h3>閱讀存摺</h3>
+      <p>借閱紀錄、本月共讀書單、心得分享牆<span class="bi-en">Reading log & book club</span></p>
     </a>
 
-    <a class="card card-mustard" style="--tilt:-1.5deg" href="pages/duty.html">
+    <a class="card card-mustard reveal" style="--tilt:-1.5deg" href="pages/duty.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="1.6"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13.2h2M11.5 13.2h2M15 13.2h2M8 16.6h2M11.5 16.6h2"/></svg>
-      <h2>值日生輪值表</h2>
-      <p>一週工作分配，點開就知道今天輪到誰</p>
+      <h3>值日生輪值表</h3>
+      <p>一週工作分配，點開就知道今天輪到誰<span class="bi-en">This week's classroom duty roster</span></p>
     </a>
 
+  </section>
+
+  <!-- Examples -->
+  <div class="section-head reveal">
+    <p class="eyebrow">See It In Action</p>
+    <h2>看看實際內容長什麼樣子<span class="bi-en">A quick look at real content from the site.</span></h2>
+  </div>
+
+  <section class="content-card reveal">
+    <div class="example-block">
+      <h3>最新公告預覽<span class="bi-en">Latest announcements</span></h3>
+      <ul class="mini-list">
+        <li><span>本週五校外教學，請攜帶雨具</span><span class="mini-date">週二發布</span></li>
+        <li><span>數學習作第 3 單元請家長簽名</span><span class="mini-date">週四發布</span></li>
+      </ul>
+      <a class="btn btn-ghost" href="pages/familyvoice.html">前往布告欄搜尋所有公告 →</a>
+    </div>
+
+    <div class="example-block">
+      <h3>雙語單字卡預覽<span class="bi-en">Bilingual vocabulary card</span></h3>
+      <ul class="mini-list">
+        <li><span><strong>harvest</strong>（收穫）— We harvest rice in autumn.</span></li>
+      </ul>
+      <a class="btn btn-ghost" href="pages/review.html">下載本學期複習卡 PDF →</a>
+    </div>
+
+    <div class="example-block">
+      <h3>活動剪影<span class="bi-en">Activity snapshots</span></h3>
+      <div class="photo-row">
+        <div class="photo-placeholder">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.2A1.8 1.8 0 0 1 5.8 6.4h1.4l.8-1.6h8l.8 1.6h1.4A1.8 1.8 0 0 1 20 8.2v9A1.8 1.8 0 0 1 18.2 19H5.8A1.8 1.8 0 0 1 4 17.2z"/><circle cx="12" cy="12.6" r="3.4"/></svg>
+          <span class="ph-label">校外教學<span class="en">Field trip</span></span>
+        </div>
+        <div class="photo-placeholder">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.2A1.8 1.8 0 0 1 5.8 6.4h1.4l.8-1.6h8l.8 1.6h1.4A1.8 1.8 0 0 1 20 8.2v9A1.8 1.8 0 0 1 18.2 19H5.8A1.8 1.8 0 0 1 4 17.2z"/><circle cx="12" cy="12.6" r="3.4"/></svg>
+          <span class="ph-label">運動會<span class="en">Sports day</span></span>
+        </div>
+        <div class="photo-placeholder">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.2A1.8 1.8 0 0 1 5.8 6.4h1.4l.8-1.6h8l.8 1.6h1.4A1.8 1.8 0 0 1 20 8.2v9A1.8 1.8 0 0 1 18.2 19H5.8A1.8 1.8 0 0 1 4 17.2z"/><circle cx="12" cy="12.6" r="3.4"/></svg>
+          <span class="ph-label">節慶活動<span class="en">Festival day</span></span>
+        </div>
+      </div>
+      <p class="content-note">正式照片準備好後，直接替換這幾個示意圖位即可。</p>
+    </div>
   </section>
 
   <footer class="board-footer">
     <p>這是網站內容規劃提案，之後可依實際班級調整文字與照片。</p>
   </footer>
 </main>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el, i){
+    el.style.transitionDelay = Math.min(i * 40, 280) + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>

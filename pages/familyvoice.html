@@ -31,31 +31,40 @@
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="5.5" width="17.6" height="13" rx="1.6"/><path d="M4 6.5l8 6.2 8-6.2"/></svg>
     </div>
     <div>
-      <p class="eyebrow eyebrow-sage">親師交流布告欄</p>
+      <p class="eyebrow eyebrow-sage">親師交流布告欄<span class="bi-en">Family Communication Board</span></p>
       <h1>讓家長不錯過班上的大小事</h1>
-      <p>公告、聯絡簿補充、常見問題，還有活動影片可以回顧。</p>
+      <p>公告、聯絡簿補充、常見問題，還有活動影片可以回顧。<span class="bi-en">Announcements, reminders, FAQs, and activity videos in one place.</span></p>
     </div>
   </header>
 
   <section class="content-card">
-    <h2>最新公告</h2>
-    <ul class="detail-list">
-      <li><span class="tag tag-sage">週二</span> 本週五校外教學，請攜帶雨具</li>
-      <li><span class="tag tag-sage">週四</span> 數學習作第 3 單元請家長簽名</li>
-      <li><span class="tag tag-sage">週五</span> 中秋節活動週材料清單公告（見<a href="festival.html">節慶好朋友日</a>）</li>
-    </ul>
-  </section>
+    <h2>搜尋公告與常見問題<span class="bi-en">Search announcements &amp; FAQs</span></h2>
+    <div class="search-box">
+      <label for="board-search" class="visually-hidden">搜尋公告與常見問題</label>
+      <input type="search" id="board-search" placeholder="輸入關鍵字搜尋，例如：簽名、請假、校外教學… Search keywords" autocomplete="off" />
+      <p class="search-meta" id="search-count"></p>
+    </div>
 
-  <section class="content-card">
-    <h2>常見問題</h2>
-    <ul class="detail-list">
+    <h3>最新公告<span class="bi-en">Latest announcements</span></h3>
+    <ul class="detail-list" id="announce-list">
+      <li><span class="tag tag-sage">週二</span> 本週五校外教學，請攜帶雨具與個人水壺</li>
+      <li><span class="tag tag-sage">週三</span> 中秋節活動週材料清單公告（見<a href="festival.html">節慶好朋友日</a>）</li>
+      <li><span class="tag tag-sage">週四</span> 數學習作第 3 單元請家長簽名</li>
+      <li><span class="tag tag-sage">週五</span> 圖書館換書日，記得帶回已借閱的書（見<a href="reading.html">閱讀存摺</a>）</li>
+    </ul>
+
+    <h3 class="mt">常見問題<span class="bi-en">FAQ</span></h3>
+    <ul class="detail-list" id="faq-list">
       <li><strong>Q：聯絡簿忘記帶怎麼辦？</strong><br>請在聯絡簿補充區留言，老師會於當天回覆。</li>
       <li><strong>Q：請假流程？</strong><br>請於當天上午 8 點前，透過班級群組或電話告知老師。</li>
+      <li><strong>Q：午餐費什麼時候繳交？</strong><br>每學期開學後兩週內，請將午餐費放入信封交給導師。</li>
     </ul>
+
+    <p class="content-note" id="search-empty" hidden>沒有符合的內容，換個關鍵字試試。<span class="bi-en">No matches — try a different keyword.</span></p>
   </section>
 
   <section class="content-card">
-    <h2>活動影片牆</h2>
+    <h2>活動影片牆<span class="bi-en">Activity video wall</span></h2>
     <div class="video-row">
       <div class="video-card">校外教學花絮</div>
       <div class="video-card">運動會精華</div>
@@ -68,5 +77,26 @@
     <p><a href="../index.html">← 回首頁</a></p>
   </footer>
 </main>
+
+<script>
+(function(){
+  var input = document.getElementById('board-search');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#announce-list li, #faq-list li'));
+  var empty = document.getElementById('search-empty');
+  var count = document.getElementById('search-count');
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    items.forEach(function(li){
+      var match = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+      li.hidden = !match;
+      if(match) visible++;
+    });
+    empty.hidden = visible > 0;
+    count.textContent = q ? ('找到 ' + visible + ' 筆結果 · ' + visible + ' result(s)') : '';
+  });
+})();
+</script>
 </body>
 </html>
