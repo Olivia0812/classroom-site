@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1400 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="55%" stop-color="#ffd0a0"/>
+      <stop offset="100%" stop-color="#f6a897"/>
+    </linearGradient></defs>
+  <rect width="1400" height="420" fill="url(#sky)"/><circle cx="700" cy="60" r="220" fill="#fffef0" opacity="0.5"/><g opacity="0.85"><path d="M180 88.3 C182.6 97.4 191.7 100 182.6 102.6 C180 111.7 177.4 102.6 168.3 100 C177.4 97.4 180 88.3 180 88.3Z" fill="#fff"/></g><g opacity="0.8"><path d="M1220 80.1 C1222.2 87.8 1229.9 90 1222.2 92.2 C1220 99.9 1217.8 92.2 1210.1 90 C1217.8 87.8 1220 80.1 1220 80.1Z" fill="#fff"/></g><g opacity="0.6"><path d="M640 171.9 C641.8 178.2 648.1 180 641.8 181.8 C640 188.1 638.2 181.8 631.9 180 C638.2 178.2 640 171.9 640 171.9Z" fill="#fff"/></g><g opacity="0.9" transform="translate(180,330) scale(1.2)">
+    <ellipse cx="0" cy="0" rx="70" ry="34" fill="#fff"/>
+    <ellipse cx="-45" cy="10" rx="42" ry="26" fill="#fff"/>
+    <ellipse cx="48" cy="8" rx="46" ry="28" fill="#fff"/>
+    <ellipse cx="0" cy="-16" rx="46" ry="30" fill="#fff"/>
+  </g><g opacity="0.8" transform="translate(560,360) scale(0.9)">
+    <ellipse cx="0" cy="0" rx="70" ry="34" fill="#fff"/>
+    <ellipse cx="-45" cy="10" rx="42" ry="26" fill="#fff"/>
+    <ellipse cx="48" cy="8" rx="46" ry="28" fill="#fff"/>
+    <ellipse cx="0" cy="-16" rx="46" ry="30" fill="#fff"/>
+  </g><g opacity="0.9" transform="translate(1000,320) scale(1.4)">
+    <ellipse cx="0" cy="0" rx="70" ry="34" fill="#fff"/>
+    <ellipse cx="-45" cy="10" rx="42" ry="26" fill="#fff"/>
+    <ellipse cx="48" cy="8" rx="46" ry="28" fill="#fff"/>
+    <ellipse cx="0" cy="-16" rx="46" ry="30" fill="#fff"/>
+  </g><g opacity="0.8" transform="translate(1300,360) scale(1.0)">
+    <ellipse cx="0" cy="0" rx="70" ry="34" fill="#fff"/>
+    <ellipse cx="-45" cy="10" rx="42" ry="26" fill="#fff"/>
+    <ellipse cx="48" cy="8" rx="46" ry="28" fill="#fff"/>
+    <ellipse cx="0" cy="-16" rx="46" ry="30" fill="#fff"/>
+  </g>
+</svg>
