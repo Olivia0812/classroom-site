@@ -14,12 +14,9 @@
     <div class="sitenav-links">
       <a href="../index.html">首頁</a>
       <a href="festival.html">節慶萬花筒</a>
-      <a href="honor.html">榮譽星河</a>
       <a href="bilingual.html" aria-current="page">雙語魔法屋</a>
       <a href="review.html">知識探險島</a>
-      <a href="familyvoice.html">班級小樹洞</a>
       <a href="gallery.html">小小創作家</a>
-      <a href="duty.html">任務小隊</a>
     </div>
   </nav>
 
@@ -41,6 +38,12 @@
   <section class="content-card">
     <p class="eyebrow eyebrow-sky">本週單字</p>
     <h2>harvest（收穫）</h2>
+    <div class="word-audio-row">
+      <button class="audio-btn" type="button" data-audio="../assets/audio/harvest.mp3" aria-label="播放 harvest 發音">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/><path d="M19 6.2a9 9 0 0 1 0 11.6"/></svg>
+      </button>
+      <span class="audio-hint">點我聽發音<span class="en">Audio coming soon — drop an mp3 into assets/audio/</span></span>
+    </div>
     <p class="content-lede">例句：We harvest rice in autumn. 我們在秋天收割稻米。</p>
     <ul class="detail-list">
       <li><span class="tag tag-sky">歌曲</span> Autumn Leaves are Falling — 跟唱＋動作示範影片</li>
@@ -51,12 +54,27 @@
   <section class="content-card">
     <h2>本月單字回顧</h2>
     <table class="detail-table">
-      <tr><td>第一週</td><td>lantern</td><td>燈籠</td></tr>
-      <tr><td>第二週</td><td>gratitude</td><td>感恩</td></tr>
-      <tr><td>第三週</td><td>harvest</td><td>收穫</td></tr>
+      <tr><td>第一週</td><td>lantern</td><td>燈籠</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/lantern.mp3" aria-label="播放 lantern 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td></tr>
+      <tr><td>第二週</td><td>gratitude</td><td>感恩</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/gratitude.mp3" aria-label="播放 gratitude 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td></tr>
+      <tr><td>第三週</td><td>harvest</td><td>收穫</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/harvest.mp3" aria-label="播放 harvest 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td></tr>
     </table>
-    <p class="content-note">口說任務完成後可累積榮譽點數，詳見<a href="honor.html">榮譽星河</a>。可到<a href="review.html">知識探險島</a>下載本學期的雙語單字複習卡 PDF。</p>
+    <p class="content-note">完成口說任務後，可以到<a href="review.html">知識探險島</a>下載本學期的雙語單字複習卡 PDF。</p>
   </section>
+
+  <script>
+  (function(){
+    document.querySelectorAll('.audio-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var src = btn.getAttribute('data-audio');
+        var audio = new Audio(src);
+        audio.play().catch(function(){
+          btn.classList.add('audio-pending');
+          setTimeout(function(){ btn.classList.remove('audio-pending'); }, 900);
+        });
+      });
+    });
+  })();
+  </script>
 
   <footer class="board-footer">
     <p><a href="../index.html">← 回首頁</a></p>
