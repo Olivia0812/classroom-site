@@ -364,6 +364,43 @@ a{ color:inherit; }
 .officer-card .name{ color:var(--ink-soft); font-size:.83rem; margin-left:.4rem; }
 .officer-card .scope{ margin:.4rem 0 0; font-size:.82rem; color:var(--ink-soft); }
 
+/* ---------- character trait cards ---------- */
+.trait-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.trait-card{
+  background:var(--surface);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.trait-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+.trait-card summary{
+  list-style:none;
+  cursor:pointer;
+  padding:.9rem 1.1rem;
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.6rem;
+}
+.trait-card summary::-webkit-details-marker{ display:none; }
+.trait-card summary:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+.trait-card .trait-zh{ font-weight:800; font-size:1.05rem; }
+.trait-card .trait-en{ display:block; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:.15rem; }
+.trait-card .chevron{ color:var(--ink-soft); font-size:.8rem; flex:0 0 auto; transition:transform .2s ease; }
+.trait-card[open] .chevron{ transform:rotate(180deg); }
+.trait-card .trait-body{
+  padding:.7rem 1.1rem 1rem;
+  font-size:.88rem;
+  color:var(--ink-soft);
+  border-top:1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
 .subject-row, .video-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin:.6rem 0; }
 .subject{
   background:var(--surface); padding:.5rem .9rem; border-radius:999px; font-size:.85rem; font-weight:600;
