@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<title>封存總覽 ｜ 克萊兒的教學小天地</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<main class="board">
+
+  <p class="breadcrumb"><a href="../index.html">🏠 回目前的班級網站</a></p>
+
+  <header class="page-hero bg-lavender">
+    <div class="page-hero-panel">
+      <div class="hero-icon" style="--accent:var(--lavender); --accent-ink:var(--lavender-ink)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      </div>
+      <div>
+        <p class="eyebrow">只有你看得到這一頁</p>
+        <h1>歷屆班級網站封存</h1>
+        <p>這一頁不會出現在網站導覽列裡，只有知道網址的你自己看得到——每個學期結束後，把當時的網站存一份進來，未來就能回顧每一屆的內容。</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="content-card">
+    <h2>各學期</h2>
+    <ul class="detail-list">
+      <li><span class="tag">115-1</span> 進行中——學期結束後封存，這裡會出現連結</li>
+    </ul>
+    <p class="content-note">之後每學期結束，在這裡加一行 <code>&lt;li&gt;</code>，連到當時封存的資料夾即可。</p>
+  </section>
+
+  <section class="content-card">
+    <h2>怎麼封存一個學期</h2>
+    <ul class="detail-list">
+      <li><span class="tag tag-lavender">步驟 1</span> 學期結束、要開始改下一學期內容之前，把整個 <code>classroom-site</code> 資料夾複製一份</li>
+      <li><span class="tag tag-lavender">步驟 2</span> 複製出來的那份放進 <code>archive/115-1/</code>（資料夾名稱換成剛結束的學期）</li>
+      <li><span class="tag tag-lavender">步驟 3</span> 回到這一頁，在上面「各學期」加一行連結，例如 <code>&lt;a href="115-1/index.html"&gt;115-1&lt;/a&gt;</code></li>
+      <li><span class="tag tag-lavender">步驟 4</span> 根目錄的網站繼續正常編輯，變成新學期的內容——網址不用換，家長的書籤照樣有效</li>
+    </ul>
+    <p class="content-note">下次要換學期的時候，直接跟 Claude 說「要封存這學期了」，照這個流程做就好，不用自己記細節。</p>
+  </section>
+
+</main>
+</body>
+</html>

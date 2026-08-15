@@ -2,23 +2,26 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8" />
-<title>克萊爾的教學小天地</title>
+<title>克萊兒的教學小天地</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="克萊爾的教學小天地：雙語魔法屋、知識冒險島、小小創作家、節慶萬花筒與品格超能力。" />
+<meta name="description" content="克萊兒的教學小天地：雙語魔法屋、知識冒險島、小小創作家、節慶萬花筒與品格超能力。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <main class="board">
 
   <nav class="sitenav" aria-label="網站導覽">
-    <a class="brand" href="index.html">📌 <span>克萊爾的教學小天地</span></a>
+    <a class="brand" href="index.html"><span class="nav-zh">🌈 克萊兒的教學小天地</span><span class="nav-en">Claire's English Corner</span></a>
     <div class="sitenav-links">
-      <a href="index.html" aria-current="page">首頁</a>
-      <a href="pages/festival.html">節慶萬花筒</a>
-      <a href="pages/bilingual.html">雙語魔法屋</a>
-      <a href="pages/review.html">知識冒險島</a>
-      <a href="pages/gallery.html">小小創作家</a>
-      <a href="pages/character.html">品格超能力</a>
+      <a href="pages/festival.html"><span class="nav-zh">節慶萬花筒</span><span class="nav-en">Festival Fun</span></a>
+      <a href="pages/bilingual.html"><span class="nav-zh">雙語魔法屋</span><span class="nav-en">English Magic House</span></a>
+      <a href="pages/review.html"><span class="nav-zh">知識冒險島</span><span class="nav-en">Adventure Island</span></a>
+      <a href="pages/gallery.html"><span class="nav-zh">小小創作家</span><span class="nav-en">My Creative Work</span></a>
+      <a href="pages/character.html"><span class="nav-zh">品格超能力</span><span class="nav-en">My Superpowers</span></a>
+      <a class="nav-external" href="#" target="_blank" rel="noopener"><span class="nav-zh">佈告欄</span><span class="nav-en">Class News</span></a>
     </div>
   </nav>
 
@@ -28,16 +31,13 @@
     <div class="tape tape-r" aria-hidden="true"></div>
     <div class="hero-panel">
       <div class="hero-text">
-        <p class="eyebrow">北斗國小 3年○班 · Class Homeroom</p>
-        <h1>克萊爾的教學小天地</h1>
+        <p class="eyebrow">🌈 一起玩、一起學的地方 ⭐</p>
+        <h1>克萊兒的教學小天地</h1>
         <p class="hero-en">A little corner for bilingual learning, festivals, and student creations.</p>
         <p class="tagline">聽聽英文、玩玩複習遊戲、看看同學的作品——每天花幾分鐘，把學過的內容變成生活的一部分。</p>
       </div>
       <div class="hero-photo">
-        <div class="photo-placeholder">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.2A1.8 1.8 0 0 1 5.8 6.4h1.4l.8-1.6h8l.8 1.6h1.4A1.8 1.8 0 0 1 20 8.2v9A1.8 1.8 0 0 1 18.2 19H5.8A1.8 1.8 0 0 1 4 17.2z"/><circle cx="12" cy="12.6" r="3.4"/></svg>
-          <span class="ph-label">教室日常照片位置<span class="en">Classroom photo placeholder</span></span>
-        </div>
+        <img class="hero-photo-img" src="assets/classroom-photo.jpg" alt="教室日常照片">
       </div>
     </div>
   </header>
@@ -45,31 +45,31 @@
   <!-- Services -->
   <section class="grid" aria-label="班級網站分區">
 
-    <a class="card card-coral" style="--tilt:-2deg" href="pages/festival.html">
+    <a class="card card-coral has-scene card-scene-festival" style="--tilt:-2deg" href="pages/festival.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.1 5.6.6-4.2 3.8 1.2 5.5L12 15.3 6.9 18l1.2-5.5-4.2-3.8 5.6-.6z"/></svg>
       <h3>節慶萬花筒</h3>
       <p>節慶英文單字、歌曲與影片，跟著節慶學英文<span class="bi-en">Festival vocabulary, songs & videos</span></p>
     </a>
 
-    <a class="card card-sky" style="--tilt:-1deg" href="pages/bilingual.html">
+    <a class="card card-sky has-scene card-scene-bilingual" style="--tilt:-1deg" href="pages/bilingual.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.3 2.2 3.5 5.1 3.5 8.2s-1.2 6-3.5 8.2c-2.3-2.2-3.5-5.1-3.5-8.2S9.7 6 12 3.8z"/></svg>
       <h3>雙語魔法屋</h3>
-      <p>每週一字、發音音檔、口說小任務<span class="bi-en">Weekly word, audio & speaking task</span></p>
+      <p>每週一字、發音音檔<span class="bi-en">Weekly word & audio</span></p>
     </a>
 
-    <a class="card card-sky" style="--tilt:2.5deg" href="pages/review.html">
+    <a class="card card-sky has-scene card-scene-review" style="--tilt:2.5deg" href="pages/review.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="1.8"/><path d="M8 12.3l2.6 2.6L16.4 9"/></svg>
       <h3>知識冒險島</h3>
-      <p>國語成語、數學小概念，練習複習題<span class="bi-en">Chinese & math practice</span></p>
+      <p>國語成語小遊戲，一關一關破關去<span class="bi-en">Chinese idiom practice</span></p>
     </a>
 
-    <a class="card card-lavender" style="--tilt:1.8deg" href="pages/gallery.html">
+    <a class="card card-lavender has-scene card-scene-gallery" style="--tilt:1.8deg" href="pages/gallery.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="1.2"/><circle cx="9" cy="9.5" r="1.8"/><path d="M4.5 17.5l5-5 3 3 3.5-4 4 6"/></svg>
       <h3>小小創作家</h3>
-      <p>日記、美勞、寫作投稿，孩子的舞台<span class="bi-en">Student work on display</span></p>
+      <p>孩子作品的小小舞台，有畫作時會放上來<span class="bi-en">Student artwork, shared now and then</span></p>
     </a>
 
-    <a class="card card-sage" style="--tilt:-1.5deg" href="pages/character.html">
+    <a class="card card-sage has-scene card-scene-character" style="--tilt:-1.5deg" href="pages/character.html">
       <svg class="card-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
       <h3>品格超能力</h3>
       <p>11 個品格，分成 3 種超能力<span class="bi-en">11 character traits, 3 superpowers</span></p>

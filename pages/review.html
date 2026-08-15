@@ -4,20 +4,23 @@
 <meta charset="utf-8" />
 <title>知識冒險島 ｜ 北斗國小 3年○班</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body class="has-scene scene-review">
 <main class="board">
 
   <nav class="sitenav" aria-label="網站導覽">
-    <a class="brand" href="../index.html">📌 <span>克萊爾的教學小天地</span></a>
+    <a class="brand" href="../index.html"><span class="nav-zh">🌈 克萊兒的教學小天地</span><span class="nav-en">Claire's English Corner</span></a>
     <div class="sitenav-links">
-      <a href="../index.html">首頁</a>
-      <a href="festival.html">節慶萬花筒</a>
-      <a href="bilingual.html">雙語魔法屋</a>
-      <a href="review.html" aria-current="page">知識冒險島</a>
-      <a href="gallery.html">小小創作家</a>
-      <a href="character.html">品格超能力</a>
+      <a href="festival.html"><span class="nav-zh">節慶萬花筒</span><span class="nav-en">Festival Fun</span></a>
+      <a href="bilingual.html"><span class="nav-zh">雙語魔法屋</span><span class="nav-en">English Magic House</span></a>
+      <a href="review.html" aria-current="page"><span class="nav-zh">知識冒險島</span><span class="nav-en">Adventure Island</span></a>
+      <a href="gallery.html"><span class="nav-zh">小小創作家</span><span class="nav-en">My Creative Work</span></a>
+      <a href="character.html"><span class="nav-zh">品格超能力</span><span class="nav-en">My Superpowers</span></a>
+      <a class="nav-external" href="#" target="_blank" rel="noopener"><span class="nav-zh">佈告欄</span><span class="nav-en">Class News</span></a>
     </div>
   </nav>
 
@@ -29,29 +32,365 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="1.8"/><path d="M8 12.3l2.6 2.6L16.4 9"/></svg>
       </div>
       <div>
-        <p class="eyebrow eyebrow-sky">知識冒險島<span class="bi-en">Knowledge Adventure Island</span></p>
+        <p class="eyebrow eyebrow-sky">知識冒險島<span class="bi-en">Adventure Island</span></p>
         <h1>把複習變成一場一場的小關卡</h1>
-        <p>主打國語成語與數學小遊戲，每個關卡約 10 題，練習就對了！<span class="bi-en">Chinese idioms and math, in short review challenges.</span></p>
+        <p>主打國語成語小遊戲，每個關卡約 10 題，練習就對了！<span class="bi-en">Chinese idioms, in short review challenges.</span></p>
       </div>
     </div>
   </header>
 
+  <div class="subtab-nav" role="tablist" aria-label="複習分類">
+    <button type="button" class="subtab-btn" data-tab="l1-6">1-6課成語</button>
+    <button type="button" class="subtab-btn is-active" data-tab="midterm">期中考複習</button>
+    <button type="button" class="subtab-btn" data-tab="l7-12">7-12課成語</button>
+    <button type="button" class="subtab-btn" data-tab="final">期末考複習</button>
+  </div>
+
+  <div class="subtab-panel" data-panel="l1-6" hidden>
+    <section class="content-card content-placeholder">
+      <h2>🚧 1-6課成語<span class="bi-en">Coming soon</span></h2>
+      <p class="content-lede">老師正在慢慢整理每一課的成語和意思，準備好就會放上來，敬請期待！</p>
+    </section>
+  </div>
+
+  <div class="subtab-panel" data-panel="midterm">
+
   <section class="content-card">
-    <h2>國語<span class="bi-en">Chinese</span></h2>
-    <div class="subject-row">
-      <span class="subject">成語接龍</span>
-      <span class="subject">部首大挑戰</span>
+    <h2>🌟 情境猜成語<span class="bi-en">Guess the idiom</span></h2>
+    <p class="content-lede">看看下面的小故事，猜猜是哪一句成語！</p>
+
+    <div class="quiz-game" id="idiomGame">
+      <div class="quiz-meta">
+        <span class="tag" id="idiomTag">第一課</span>
+        <span class="quiz-score-text">答對 <strong id="idiomScore">0</strong> ／ <span id="idiomTotal">0</span> 題</span>
+      </div>
+      <p class="quiz-prompt" id="idiomPrompt">載入中……</p>
+      <div class="quiz-choices" id="idiomChoices"></div>
+      <p class="quiz-feedback" id="idiomFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="idiomNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="idiomReset">重新計分</button>
+      </div>
     </div>
   </section>
 
   <section class="content-card">
-    <h2>數學<span class="bi-en">Math</span></h2>
-    <div class="subject-row">
-      <span class="subject">心臟病心算</span>
-      <span class="subject">乘法賓果</span>
+    <h2>🐉 成語接龍<span class="bi-en">Idiom streak challenge</span></h2>
+    <p class="content-lede">每個成語都藏著一個生字，把它接回去，看看你能連續答對幾題！</p>
+
+    <div class="quiz-game" id="chainGame">
+      <div class="quiz-meta">
+        <span class="tag" id="chainTag">第一課</span>
+        <span class="quiz-streak">🐉 連續答對 <strong id="chainStreak">0</strong> 題　🏆 最佳 <strong id="chainBest">0</strong> 題</span>
+      </div>
+      <p class="quiz-prompt" id="chainPrompt">載入中……</p>
+      <div class="quiz-choices" id="chainChoices"></div>
+      <p class="quiz-feedback" id="chainFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="chainNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="chainReset">重新挑戰</button>
+      </div>
     </div>
-    <p class="content-note">每一關過關，就是一次小小的成就！</p>
   </section>
+
+  <section class="content-card">
+    <h2>🔍 部首大挑戰<span class="bi-en">Radical challenge</span></h2>
+    <p class="content-lede">這個生字的部首是哪一個？選對了就能認識它跟哪一類的字有關！</p>
+
+    <div class="quiz-game" id="radicalGame">
+      <div class="quiz-meta">
+        <span class="tag" id="radicalTag">第一課</span>
+        <span class="quiz-score-text">答對 <strong id="radicalScore">0</strong> ／ <span id="radicalTotal">0</span> 題</span>
+      </div>
+      <p class="quiz-prompt" id="radicalPrompt">載入中……</p>
+      <div class="quiz-choices" id="radicalChoices"></div>
+      <p class="quiz-feedback" id="radicalFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="radicalNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="radicalReset">重新計分</button>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="subtab-panel" data-panel="l7-12" hidden>
+    <section class="content-card content-placeholder">
+      <h2>🚧 7-12課成語<span class="bi-en">Coming soon</span></h2>
+      <p class="content-lede">老師正在慢慢整理每一課的成語和意思，準備好就會放上來，敬請期待！</p>
+    </section>
+  </div>
+
+  <div class="subtab-panel" data-panel="final" hidden>
+    <section class="content-card content-placeholder">
+      <h2>🚧 期末考複習<span class="bi-en">Coming soon</span></h2>
+      <p class="content-lede">等 7-12 課的成語準備好，就會有期末複習關卡囉！</p>
+    </section>
+  </div>
+
+  <script>
+  (function(){
+    var tabBtns = document.querySelectorAll('.subtab-btn');
+    var panels = document.querySelectorAll('.subtab-panel');
+    tabBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        tabBtns.forEach(function(b){ b.classList.remove('is-active'); });
+        panels.forEach(function(p){ p.hidden = true; });
+        btn.classList.add('is-active');
+        document.querySelector('.subtab-panel[data-panel="' + btn.dataset.tab + '"]').hidden = false;
+      });
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var lessonChinese = ["", "一", "二", "三", "四", "五", "六"];
+    var lessonTagClass = ["", "tag-coral", "tag-mustard", "tag-sky", "tag-sage", "tag-lavender", "tag-coral"];
+
+    function shuffle(arr){
+      for (var i = arr.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+      return arr;
+    }
+
+    function createQuiz(opts){
+      var current = null;
+      var score = 0, total = 0, streak = 0;
+      var best = opts.bestKey ? (parseInt(localStorage.getItem(opts.bestKey), 10) || 0) : 0;
+
+      function pick(){
+        var bank = opts.bank;
+        current = bank[Math.floor(Math.random() * bank.length)];
+        var pool = bank.filter(function(item){ return item.answer !== current.answer; });
+        shuffle(pool);
+        var choices = shuffle([current].concat(pool.slice(0, 3)));
+        render(choices);
+      }
+
+      function render(choices){
+        opts.promptEl.innerHTML = opts.getPrompt(current);
+        if (opts.tagEl){
+          opts.tagEl.textContent = '第' + lessonChinese[current.lesson] + '課';
+          opts.tagEl.className = 'tag ' + lessonTagClass[current.lesson];
+        }
+        opts.feedbackEl.hidden = true;
+        opts.feedbackEl.className = 'quiz-feedback';
+        opts.choicesEl.innerHTML = '';
+        choices.forEach(function(item){
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'quiz-choice';
+          btn.textContent = item.answer;
+          btn.addEventListener('click', function(){ answer(item, btn); });
+          opts.choicesEl.appendChild(btn);
+        });
+        updateStats();
+      }
+
+      function answer(selected, btn){
+        var buttons = opts.choicesEl.querySelectorAll('.quiz-choice');
+        buttons.forEach(function(b){
+          b.disabled = true;
+          if (b.textContent === current.answer) b.classList.add('is-correct');
+        });
+        var correct = selected.answer === current.answer;
+        if (opts.mode === 'streak'){
+          if (correct){
+            streak++;
+            if (streak > best){ best = streak; if (opts.bestKey) localStorage.setItem(opts.bestKey, String(best)); }
+          } else {
+            streak = 0;
+            btn.classList.add('is-wrong');
+          }
+        } else {
+          total++;
+          if (correct) score++; else btn.classList.add('is-wrong');
+        }
+        opts.feedbackEl.textContent = (correct ? opts.correctPrefix : opts.wrongPrefix) + opts.getMeaning(current);
+        opts.feedbackEl.classList.add(correct ? 'is-correct' : 'is-wrong');
+        opts.feedbackEl.hidden = false;
+        updateStats();
+      }
+
+      function updateStats(){
+        if (opts.mode === 'streak'){
+          if (opts.streakEl) opts.streakEl.textContent = streak;
+          if (opts.bestEl) opts.bestEl.textContent = best;
+        } else {
+          if (opts.scoreEl) opts.scoreEl.textContent = score;
+          if (opts.totalEl) opts.totalEl.textContent = total;
+        }
+      }
+
+      opts.nextBtn.addEventListener('click', pick);
+      opts.resetBtn.addEventListener('click', function(){
+        score = 0; total = 0; streak = 0;
+        updateStats();
+        pick();
+      });
+
+      pick();
+    }
+
+    /* ---------- 情境猜成語 ---------- */
+    var idiomBank = [
+      {lesson:1, answer:"拖泥帶水", meaning:"做事拖拖拉拉，不乾脆", prompt:"小明整理房間，一下摸這個，一下摸那個，動作很慢，拖到吃飯時間才收拾完。"},
+      {lesson:1, answer:"千變萬化", meaning:"變化很多、很快", prompt:"天空的雲一下子像小狗，一下子像城堡，一下子又變成兔子，形狀一直在改變。"},
+      {lesson:1, answer:"千鈞一髮", meaning:"情況非常危急，差一點點", prompt:"小華騎腳踏車，差一點點就要撞上前面的車子，好險及時煞車，超級驚險！"},
+      {lesson:1, answer:"風平浪靜", meaning:"恢復平靜、沒有紛爭", prompt:"原本吵得很兇的兩兄弟，經過老師勸和後，和好如初，教室恢復安靜、氣氛也緩和下來。"},
+      {lesson:1, answer:"手足無措", meaning:"緊張慌亂，不知道該怎麼辦", prompt:"小美第一次上台報告，突然忘記要說什麼，整個人愣住，不知道手要放哪裡、腳要站哪裡。"},
+      {lesson:2, answer:"按部就班", meaning:"依照規定、順序做事，不亂來", prompt:"每天早上，小朋友都照著課表，先收作業、再排隊、再進教室，一步一步不亂來。"},
+      {lesson:2, answer:"約法三章", meaning:"事先講好大家都要遵守的規則", prompt:"開學第一天，老師和大家一起討論班規，講好幾條大家都要遵守的約定。"},
+      {lesson:2, answer:"興高采烈", meaning:"非常高興、開心", prompt:"聽到要去校外教學，全班同學又叫又跳，笑得合不攏嘴。"},
+      {lesson:2, answer:"耳提面命", meaning:"反覆叮嚀、提醒", prompt:"媽媽每天出門前都一直叮嚀：「要記得帶水壺、要小心過馬路……」講了好幾遍。"},
+      {lesson:2, answer:"愁眉不展", meaning:"心裡擔心煩惱，皺著眉頭", prompt:"小華這次考試考不好，整堂課都皺著眉頭，一句話也不想說。"},
+      {lesson:3, answer:"神出鬼沒", meaning:"忽然出現忽然消失，讓人猜不到", prompt:"那隻貓咪很奇怪，一下子出現在你腳邊，一下子又不知道跑去哪裡，讓人捉摸不定。"},
+      {lesson:3, answer:"無理取鬧", meaning:"沒有道理卻故意吵鬧", prompt:"小弟弟想買玩具，沒有得到就在地上又哭又鬧，怎麼勸都不聽。"},
+      {lesson:3, answer:"赴湯蹈火", meaning:"不畏艱難危險，勇敢向前", prompt:"好朋友遇到困難，即使很危險，他還是義無反顧地衝去幫忙，一點都不害怕。"},
+      {lesson:3, answer:"不同凡響", meaning:"表現特別出色，與眾不同", prompt:"這次表演，同學的舞蹈跳得特別精彩，跟平常完全不一樣，讓台下觀眾都驚呆了。"},
+      {lesson:3, answer:"苦盡甘來", meaning:"辛苦的日子過去，好日子來了", prompt:"他辛苦練習了好幾個月，終於在比賽中得到第一名，露出開心的笑容。"},
+      {lesson:4, answer:"心煩意亂", meaning:"心裡煩躁、思緒混亂", prompt:"功課寫不完，加上東西找不到，小明的心裡亂糟糟的，什麼都靜不下心做。"},
+      {lesson:4, answer:"惱羞成怒", meaning:"因為羞愧而生氣發怒", prompt:"小華下棋輸了，本來覺得很丟臉，後來忍不住生氣，把棋盤都推倒了。"},
+      {lesson:4, answer:"強詞奪理", meaning:"沒道理卻硬要辯解", prompt:"明明是自己先動手推人，卻硬說是對方的錯，講了一堆理由想證明自己沒錯。"},
+      {lesson:4, answer:"一知半解", meaning:"只知道一點點，不完全懂", prompt:"老師問問題，小美只學了一點點，回答得不清不楚，好像懂又好像不懂。"},
+      {lesson:5, answer:"生龍活虎", meaning:"精神旺盛、充滿活力", prompt:"本來感冒生病沒精神的小明，睡了一覺後突然活蹦亂跳，跑跑跳跳精神超好。"},
+      {lesson:5, answer:"揚眉吐氣", meaning:"消除委屈，感到痛快、驕傲", prompt:"小華這次考試終於考得很好，抬頭挺胸走出教室，感覺一整年的努力都值得了。"},
+      {lesson:5, answer:"防患未然", meaning:"事情發生前先做好準備", prompt:"老師在颱風來之前，就先教大家檢查門窗、準備好緊急用品，避免真的出事。"},
+      {lesson:5, answer:"兩敗俱傷", meaning:"雙方爭鬥，結果都受到傷害", prompt:"兩個同學為了一件小事吵架，互相罵來罵去，結果兩個人都很難過，也都被老師處罰。"},
+      {lesson:5, answer:"出生入死", meaning:"冒著生命危險，經歷各種艱險", prompt:"消防員衝進火場救人，冒著生命危險，一次又一次進出危險的地方。"},
+      {lesson:6, answer:"杯盤狼藉", meaning:"餐具凌亂散落，形容吃完飯後雜亂的樣子", prompt:"生日派對結束後，桌上到處都是沒洗的杯子、盤子，亂七八糟散落一地。"},
+      {lesson:6, answer:"一箭雙雕", meaning:"一個動作同時達成兩個目的", prompt:"小明去便利商店，順便繳了帳單，又買到想要的東西，一次出門就把兩件事都做完了。"},
+      {lesson:6, answer:"如釋重負", meaning:"像放下重擔一樣，形容心情放鬆", prompt:"考試終於結束，小華走出考場，深深吐了一口氣，覺得肩膀上的壓力一下子都不見了。"},
+      {lesson:6, answer:"逃之夭夭", meaning:"很快地逃跑、溜走", prompt:"小狗打翻花瓶後，看到主人生氣的臉，立刻拔腿就跑，一溜煙就不見蹤影。"},
+      {lesson:6, answer:"文不對題", meaning:"回答的內容跟問題沒有關係", prompt:"老師問「你今天吃了什麼早餐？」，小美卻回答「我昨天去公園玩」，答非所問。"}
+    ];
+
+    createQuiz({
+      bank: idiomBank,
+      mode: 'score',
+      promptEl: document.getElementById('idiomPrompt'),
+      choicesEl: document.getElementById('idiomChoices'),
+      feedbackEl: document.getElementById('idiomFeedback'),
+      tagEl: document.getElementById('idiomTag'),
+      scoreEl: document.getElementById('idiomScore'),
+      totalEl: document.getElementById('idiomTotal'),
+      nextBtn: document.getElementById('idiomNext'),
+      resetBtn: document.getElementById('idiomReset'),
+      getPrompt: function(item){ return item.prompt; },
+      getMeaning: function(item){ return '「' + item.answer + '」：' + item.meaning; },
+      correctPrefix: '答對了！',
+      wrongPrefix: '再想想～正確答案是'
+    });
+
+    /* ---------- 成語接龍（缺字挑戰） ---------- */
+    var chainBank = [
+      {lesson:1, answer:"泥", full:"拖泥帶水", meaning:"做事拖拖拉拉，不乾脆", prompt:"拖＿帶水"},
+      {lesson:1, answer:"化", full:"千變萬化", meaning:"變化很多、很快", prompt:"千變萬＿"},
+      {lesson:1, answer:"髮", full:"千鈞一髮", meaning:"情況非常危急，差一點點", prompt:"千鈞一＿"},
+      {lesson:1, answer:"平", full:"風平浪靜", meaning:"恢復平靜、沒有紛爭", prompt:"風＿浪靜"},
+      {lesson:1, answer:"足", full:"手足無措", meaning:"緊張慌亂，不知道該怎麼辦", prompt:"手＿無措"},
+      {lesson:2, answer:"班", full:"按部就班", meaning:"依照規定、順序做事，不亂來", prompt:"按部就＿"},
+      {lesson:2, answer:"約", full:"約法三章", meaning:"事先講好大家都要遵守的規則", prompt:"＿法三章"},
+      {lesson:2, answer:"烈", full:"興高采烈", meaning:"非常高興、開心", prompt:"興高采＿"},
+      {lesson:2, answer:"提", full:"耳提面命", meaning:"反覆叮嚀、提醒", prompt:"耳＿面命"},
+      {lesson:2, answer:"愁", full:"愁眉不展", meaning:"心裡擔心煩惱，皺著眉頭", prompt:"＿眉不展"},
+      {lesson:3, answer:"鬼", full:"神出鬼沒", meaning:"忽然出現忽然消失，讓人猜不到", prompt:"神出＿沒"},
+      {lesson:3, answer:"鬧", full:"無理取鬧", meaning:"沒有道理卻故意吵鬧", prompt:"無理取＿"},
+      {lesson:3, answer:"響", full:"不同凡響", meaning:"表現特別出色，與眾不同", prompt:"不同凡＿"},
+      {lesson:3, answer:"盡", full:"苦盡甘來", meaning:"辛苦的日子過去，好日子來了", prompt:"苦＿甘來"},
+      {lesson:4, answer:"煩", full:"心煩意亂", meaning:"心裡煩躁、思緒混亂", prompt:"心＿意亂"},
+      {lesson:4, answer:"惱", full:"惱羞成怒", meaning:"因為羞愧而生氣發怒", prompt:"＿羞成怒"},
+      {lesson:4, answer:"強", full:"強詞奪理", meaning:"沒道理卻硬要辯解", prompt:"＿詞奪理"},
+      {lesson:4, answer:"解", full:"一知半解", meaning:"只知道一點點，不完全懂", prompt:"一知半＿"},
+      {lesson:5, answer:"龍", full:"生龍活虎", meaning:"精神旺盛、充滿活力", prompt:"生＿活虎"},
+      {lesson:5, answer:"吐", full:"揚眉吐氣", meaning:"消除委屈，感到痛快、驕傲", prompt:"揚眉＿氣"},
+      {lesson:5, answer:"防", full:"防患未然", meaning:"事情發生前先做好準備", prompt:"＿患未然"},
+      {lesson:5, answer:"傷", full:"兩敗俱傷", meaning:"雙方爭鬥，結果都受到傷害", prompt:"兩敗俱＿"},
+      {lesson:5, answer:"死", full:"出生入死", meaning:"冒著生命危險，經歷各種艱險", prompt:"出生入＿"},
+      {lesson:6, answer:"杯", full:"杯盤狼藉", meaning:"餐具凌亂散落，形容吃完飯後雜亂的樣子", prompt:"＿盤狼藉"},
+      {lesson:6, answer:"雙", full:"一箭雙雕", meaning:"一個動作同時達成兩個目的", prompt:"一箭＿雕"},
+      {lesson:6, answer:"負", full:"如釋重負", meaning:"像放下重擔一樣，形容心情放鬆", prompt:"如釋重＿"},
+      {lesson:6, answer:"逃", full:"逃之夭夭", meaning:"很快地逃跑、溜走", prompt:"＿之夭夭"},
+      {lesson:6, answer:"題", full:"文不對題", meaning:"回答的內容跟問題沒有關係", prompt:"文不對＿"}
+    ];
+
+    createQuiz({
+      bank: chainBank,
+      mode: 'streak',
+      bestKey: 'chainBestStreak',
+      promptEl: document.getElementById('chainPrompt'),
+      choicesEl: document.getElementById('chainChoices'),
+      feedbackEl: document.getElementById('chainFeedback'),
+      tagEl: document.getElementById('chainTag'),
+      streakEl: document.getElementById('chainStreak'),
+      bestEl: document.getElementById('chainBest'),
+      nextBtn: document.getElementById('chainNext'),
+      resetBtn: document.getElementById('chainReset'),
+      getPrompt: function(item){ return item.prompt.replace('＿', '<span class="blank-char">＿</span>'); },
+      getMeaning: function(item){ return '「' + item.full + '」：' + item.meaning; },
+      correctPrefix: '接對了！完整成語是',
+      wrongPrefix: '斷了一節～正確答案是'
+    });
+
+    /* ---------- 部首大挑戰 ---------- */
+    var radicalBank = [
+      {lesson:1, char:"泥", answer:"氵（水）", meaning:"跟水有關，例如泥、河、游泳", prompt:""},
+      {lesson:1, char:"雀", answer:"隹（短尾鳥）", meaning:"字裡藏著一隻短尾巴的小鳥", prompt:""},
+      {lesson:1, char:"髮", answer:"髟（頭髮）", meaning:"跟頭髮、毛有關", prompt:""},
+      {lesson:1, char:"處", answer:"虍（虎紋）", meaning:"上面是老虎身上的花紋", prompt:""},
+      {lesson:1, char:"足", answer:"足（腳）", meaning:"自己就是部首，跟腳有關", prompt:""},
+      {lesson:2, char:"訂", answer:"言（言字旁）", meaning:"跟說話、文字有關", prompt:""},
+      {lesson:2, char:"班", answer:"玉（玉字旁）", meaning:"跟玉、寶物有關", prompt:""},
+      {lesson:2, char:"級", answer:"糸（糸字旁）", meaning:"跟絲線、繩子有關", prompt:""},
+      {lesson:2, char:"持", answer:"扌（提手旁）", meaning:"跟手的動作有關", prompt:""},
+      {lesson:2, char:"錄", answer:"金（金字旁）", meaning:"跟金屬有關", prompt:""},
+      {lesson:2, char:"聊", answer:"耳（耳字旁）", meaning:"跟耳朵、聽有關", prompt:""},
+      {lesson:2, char:"愁", answer:"心（心字底）", meaning:"跟心情、感覺有關", prompt:""},
+      {lesson:3, char:"鬼", answer:"鬼（鬼字旁）", meaning:"自己就是部首，跟鬼怪有關", prompt:""},
+      {lesson:3, char:"鬧", answer:"鬥（鬥字部）", meaning:"跟打鬥、爭吵有關", prompt:""},
+      {lesson:3, char:"舞", answer:"舛（舛字部）", meaning:"兩腳相背的樣子，常跟動作有關", prompt:""},
+      {lesson:3, char:"響", answer:"音（音字旁）", meaning:"跟聲音有關", prompt:""},
+      {lesson:3, char:"盡", answer:"皿（皿字底）", meaning:"跟器皿、容器有關", prompt:""},
+      {lesson:3, char:"責", answer:"貝（貝字旁）", meaning:"跟貝殼、財物有關", prompt:""},
+      {lesson:4, char:"惱", answer:"忄（豎心旁）", meaning:"跟心情、感覺有關", prompt:""},
+      {lesson:4, char:"霧", answer:"雨（雨字頭）", meaning:"跟天氣、水氣有關", prompt:""},
+      {lesson:4, char:"脾", answer:"月（月字旁）", meaning:"跟身體有關（肉部）", prompt:""},
+      {lesson:4, char:"強", answer:"弓（弓字旁）", meaning:"跟弓箭、力量有關", prompt:""},
+      {lesson:5, char:"龍", answer:"龍（龍字旁）", meaning:"自己就是部首，跟龍有關", prompt:""},
+      {lesson:5, char:"體", answer:"骨（骨字旁）", meaning:"跟身體、骨頭有關", prompt:""},
+      {lesson:5, char:"警", answer:"言（言字旁）", meaning:"跟說話、文字有關", prompt:""},
+      {lesson:5, char:"兄", answer:"儿（兒字旁）", meaning:"像人的腿，常跟人有關", prompt:""},
+      {lesson:6, char:"幕", answer:"巾（巾字旁）", meaning:"跟布料有關", prompt:""},
+      {lesson:6, char:"杯", answer:"木（木字旁）", meaning:"跟樹木有關", prompt:""},
+      {lesson:6, char:"雙", answer:"隹（短尾鳥）", meaning:"字裡藏著兩隻短尾巴的小鳥", prompt:""},
+      {lesson:6, char:"負", answer:"貝（貝字旁）", meaning:"跟貝殼、財物有關", prompt:""},
+      {lesson:6, char:"逃", answer:"辶（走之旁）", meaning:"跟走路、移動有關", prompt:""},
+      {lesson:6, char:"題", answer:"頁（頁字旁）", meaning:"跟頭、書頁有關", prompt:""},
+      {lesson:6, char:"部", answer:"阝（右耳旁）", meaning:"跟地方、區域有關（邑部）", prompt:""}
+    ];
+    radicalBank.forEach(function(item){ item.prompt = '「' + item.char + '」的部首是？'; });
+
+    createQuiz({
+      bank: radicalBank,
+      mode: 'score',
+      promptEl: document.getElementById('radicalPrompt'),
+      choicesEl: document.getElementById('radicalChoices'),
+      feedbackEl: document.getElementById('radicalFeedback'),
+      tagEl: document.getElementById('radicalTag'),
+      scoreEl: document.getElementById('radicalScore'),
+      totalEl: document.getElementById('radicalTotal'),
+      nextBtn: document.getElementById('radicalNext'),
+      resetBtn: document.getElementById('radicalReset'),
+      getPrompt: function(item){ return item.prompt; },
+      getMeaning: function(item){ return '「' + item.char + '」的部首是' + item.answer + '：' + item.meaning; },
+      correctPrefix: '答對了！',
+      wrongPrefix: '再想想～'
+    });
+  })();
+  </script>
 
   <footer class="board-footer">
     <p><a href="../index.html">← 回首頁</a></p>
