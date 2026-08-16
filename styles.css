@@ -387,6 +387,8 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
 .content-card h2{ margin:.1rem 0 .7rem; font-size:1.7rem; font-weight:800; text-wrap:balance; }
 .content-card h3{ margin:1.3rem 0 .6rem; font-size:1.2rem; font-weight:800; }
 .content-lede{ margin:0 0 .9rem; max-width:60ch; font-size:1.05rem; }
+.idiom-page{ display:block; width:100%; border-radius:14px; box-shadow:var(--shadow); }
+.idiom-page + .idiom-page{ margin-top:1rem; }
 .content-note{ color:var(--ink-soft); font-size:.92rem; margin:.6rem 0 0; }
 
 /* ---------- subtab nav (review page level split) ---------- */
@@ -517,6 +519,18 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
   font-size:.88rem;
   color:var(--ink-soft);
   border-top:2px dotted color-mix(in srgb, var(--ink) 16%, transparent);
+}
+.trait-video-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  margin:0 0 1.1rem;
+  background:#000;
+}
+.trait-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  border:none;
 }
 
 .subject-row, .video-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin:.6rem 0; }
@@ -679,6 +693,17 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
 }
 .audio-hint{ font-size:.8rem; color:var(--ink-soft); }
 .audio-hint .en{ display:block; font-style:italic; font-size:.85em; margin-top:.1em; }
+
+.lesson-image{ display:block; width:100%; border-radius:16px; box-shadow:var(--shadow); margin-bottom:1.2rem; }
+.char-badge{ width:34px; height:34px; border-radius:50%; object-fit:cover; flex:0 0 auto; box-shadow:var(--shadow); margin-right:.2rem; }
+.bi-en-line{ font-style:italic; color:var(--ink-soft); font-size:.9em; margin:-.5rem 0 .9rem; }
+.word-chip-grid{ display:flex; flex-wrap:wrap; gap:.6rem; padding:0; margin:0; list-style:none; }
+.word-chip{
+  display:flex; align-items:center; gap:.5rem;
+  background:var(--surface-2); border-radius:999px;
+  padding:.35rem .9rem .35rem .35rem;
+  font-size:.92rem; font-weight:600;
+}
 
 /* ---------- download resource ---------- */
 .download-card{

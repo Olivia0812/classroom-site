@@ -40,42 +40,259 @@
   </header>
 
   <section class="content-card">
-    <p class="eyebrow eyebrow-sky">本週單字</p>
-    <h2>harvest（收穫）</h2>
-    <div class="word-audio-row">
-      <button class="audio-btn" type="button" data-audio="../assets/audio/harvest.mp3" data-word="harvest" aria-label="播放 harvest 發音">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/><path d="M19 6.2a9 9 0 0 1 0 11.6"/></svg>
-      </button>
-      <span class="audio-hint">點我聽發音<span class="en">Tap to hear the word</span></span>
-    </div>
-    <p class="content-lede">例句：We harvest rice in autumn. 我們在秋天收割稻米。</p>
-    <ul class="detail-list">
-      <li><span class="tag tag-sky">歌曲</span> Autumn Leaves are Falling — 跟唱＋動作示範影片</li>
-    </ul>
+    <p class="eyebrow eyebrow-sky">本月品格單字<span class="bi-en">Monthly Character Word</span></p>
+    <div id="charWordCurrent"></div>
   </section>
 
   <section class="content-card">
-    <h2>本月單字回顧</h2>
-    <table class="detail-table">
-      <tr><td>第一週</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/lantern.mp3" data-word="lantern" aria-label="播放 lantern 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td><td>lantern</td><td>燈籠</td></tr>
-      <tr><td>第二週</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/gratitude.mp3" data-word="gratitude" aria-label="播放 gratitude 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td><td>gratitude</td><td>感恩</td></tr>
-      <tr><td>第三週</td><td><button class="audio-btn small" type="button" data-audio="../assets/audio/harvest.mp3" data-word="harvest" aria-label="播放 harvest 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button></td><td>harvest</td><td>收穫</td></tr>
-    </table>
+    <h2>品格單字回顧<span class="bi-en">Word history</span></h2>
+    <table class="detail-table" id="charWordHistoryTable"></table>
   </section>
 
   <section class="content-card">
-    <h2>可下載複習資源<span class="bi-en">Downloadable resource</span></h2>
-    <div class="download-card">
-      <span class="dl-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4.5 17v2.2A1.8 1.8 0 0 0 6.3 21h11.4a1.8 1.8 0 0 0 1.8-1.8V17"/></svg>
-      </span>
-      <div class="dl-text">
-        <strong>雙語單字複習卡（PDF）</strong>
-        <span>本學期精選 8 個單字，可列印剪下，每天複習一張・Bilingual vocabulary flashcards, ready to print</span>
-      </div>
-      <a class="btn btn-primary" href="../assets/bilingual-vocab-flashcards.pdf" download>下載 PDF ↓</a>
-    </div>
+    <p class="eyebrow eyebrow-sky">本週一句<span class="bi-en">Sentence of the Week</span></p>
+    <div id="weekSentenceCurrent"></div>
   </section>
+
+  <section class="content-card">
+    <h2>每週一句回顧<span class="bi-en">Sentence history</span></h2>
+    <table class="detail-table" id="weekSentenceHistoryTable"></table>
+  </section>
+
+  <div class="subtab-nav" role="tablist" aria-label="分課內容">
+    <button type="button" class="subtab-btn is-active" data-tab="l1">第一課</button>
+    <button type="button" class="subtab-btn" data-tab="l2">第二課</button>
+    <button type="button" class="subtab-btn" data-tab="l3">第三課</button>
+    <button type="button" class="subtab-btn" data-tab="l4">第四課</button>
+  </div>
+
+  <div class="subtab-panel" data-panel="l1">
+    <section class="content-card">
+      <h2>第一課：Numbers 1-12</h2>
+      <img class="lesson-image" src="../assets/bilingual-lessons/lesson1.jpg" alt="Lesson 1 Vocabulary: Numbers 1-12" />
+      <ul class="word-chip-grid">
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/one.mp3" data-word="one" aria-label="播放 one 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>one (1)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/two.mp3" data-word="two" aria-label="播放 two 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>two (2)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/three.mp3" data-word="three" aria-label="播放 three 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>three (3)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/four.mp3" data-word="four" aria-label="播放 four 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>four (4)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/five.mp3" data-word="five" aria-label="播放 five 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>five (5)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/six.mp3" data-word="six" aria-label="播放 six 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>six (6)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/seven.mp3" data-word="seven" aria-label="播放 seven 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>seven (7)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/eight.mp3" data-word="eight" aria-label="播放 eight 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>eight (8)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/nine.mp3" data-word="nine" aria-label="播放 nine 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>nine (9)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/ten.mp3" data-word="ten" aria-label="播放 ten 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>ten (10)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/eleven.mp3" data-word="eleven" aria-label="播放 eleven 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>eleven (11)</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/twelve.mp3" data-word="twelve" aria-label="播放 twelve 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>twelve (12)</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="subtab-panel" data-panel="l2" hidden>
+    <section class="content-card">
+      <h2>第二課：Emotions</h2>
+      <img class="lesson-image" src="../assets/bilingual-lessons/lesson2.jpg" alt="Lesson 2 Vocabulary: Emotions" />
+      <ul class="word-chip-grid">
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/angry.mp3" data-word="angry" aria-label="播放 angry 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>angry</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/happy.mp3" data-word="happy" aria-label="播放 happy 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>happy</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/sad.mp3" data-word="sad" aria-label="播放 sad 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>sad</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/hungry.mp3" data-word="hungry" aria-label="播放 hungry 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>hungry</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/thirsty.mp3" data-word="thirsty" aria-label="播放 thirsty 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>thirsty</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="subtab-panel" data-panel="l3" hidden>
+    <section class="content-card">
+      <h2>第三課：Toys</h2>
+      <img class="lesson-image" src="../assets/bilingual-lessons/lesson3.jpg" alt="Lesson 3 Vocabulary: Toys" />
+      <ul class="word-chip-grid">
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/yo-yo.mp3" data-word="yo-yo" aria-label="播放 yo-yo 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>yo-yo</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/kite.mp3" data-word="kite" aria-label="播放 kite 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>kite</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/ball.mp3" data-word="ball" aria-label="播放 ball 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>ball</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/car.mp3" data-word="car" aria-label="播放 car 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>car</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/robot.mp3" data-word="robot" aria-label="播放 robot 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>robot</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/doll.mp3" data-word="doll" aria-label="播放 doll 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>doll</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="subtab-panel" data-panel="l4" hidden>
+    <section class="content-card">
+      <h2>第四課：Colors</h2>
+      <img class="lesson-image" src="../assets/bilingual-lessons/lesson4.jpg" alt="Lesson 4 Vocabulary: Colors" />
+      <ul class="word-chip-grid">
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/blue.mp3" data-word="blue" aria-label="播放 blue 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>blue</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/yellow.mp3" data-word="yellow" aria-label="播放 yellow 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>yellow</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/green.mp3" data-word="green" aria-label="播放 green 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>green</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/red.mp3" data-word="red" aria-label="播放 red 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>red</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/purple.mp3" data-word="purple" aria-label="播放 purple 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>purple</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/white.mp3" data-word="white" aria-label="播放 white 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>white</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/black.mp3" data-word="black" aria-label="播放 black 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>black</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/orange.mp3" data-word="orange" aria-label="播放 orange 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>orange</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/pink.mp3" data-word="pink" aria-label="播放 pink 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>pink</li>
+        <li class="word-chip"><button class="audio-btn small" type="button" data-audio="../assets/audio/brown.mp3" data-word="brown" aria-label="播放 brown 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>brown</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+  (function(){
+    var bTabBtns = document.querySelectorAll('.subtab-btn');
+    var bPanels = document.querySelectorAll('.subtab-panel');
+    bTabBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        bTabBtns.forEach(function(b){ b.classList.remove('is-active'); });
+        bPanels.forEach(function(p){ p.hidden = true; });
+        btn.classList.add('is-active');
+        document.querySelector('.subtab-panel[data-panel="' + btn.dataset.tab + '"]').hidden = false;
+      });
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var AUDIO_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg>';
+
+    function audioBtn(mp3, word){
+      return '<button class="audio-btn small" type="button" data-audio="' + mp3 + '" data-word="' + word.replace(/"/g,'&quot;') + '" aria-label="播放發音">' + AUDIO_SVG + '</button>';
+    }
+
+    // ---------- 每週一句 ----------
+    var WEEKS = [
+      { en:"Hello! / Hi!", say:"Hello! Hi!", zh:"哈囉！／嗨！", note_zh:"打招呼、見面時", note_en:"When you meet someone",
+        ex_en:"Hello! Hi! Nice to meet you.", ex_zh:"哈囉！嗨！很高興認識你。" },
+      { en:"Good morning.", say:"Good morning.", zh:"早安。", note_zh:"早上見面的招呼", note_en:"Morning greeting",
+        ex_en:"Good morning, everyone!", ex_zh:"大家早安！" },
+      { en:"What's your name? / My name is ___.", say:"What's your name? My name is Ken.", zh:"你叫什麼名字？／我的名字是___。", note_zh:"介紹自己的名字", note_en:"Introducing yourself",
+        ex_en:"What's your name? My name is Ken.", ex_zh:"你叫什麼名字？我的名字是 Ken。" },
+      { en:"Thank you. / You're welcome.", say:"Thank you. You're welcome.", zh:"謝謝。／不客氣。", note_zh:"感謝別人", note_en:"Thanking someone",
+        ex_en:"Thank you for the pencil. You're welcome!", ex_zh:"謝謝你的鉛筆。不客氣！" },
+      { en:"Goodbye. / See you tomorrow.", say:"Goodbye. See you tomorrow.", zh:"再見。／明天見。", note_zh:"放學道別", note_en:"Saying goodbye after school",
+        ex_en:"Goodbye, everyone! See you tomorrow!", ex_zh:"大家再見！明天見！" },
+      { en:"How are you? / I'm fine, thank you.", say:"How are you? I'm fine, thank you.", zh:"你好嗎？／我很好，謝謝。", note_zh:"日常問候", note_en:"Everyday greeting",
+        ex_en:"How are you today? I'm fine, thank you.", ex_zh:"你今天好嗎？我很好，謝謝。" },
+      { en:"I'm happy. / I'm sad. / I'm hungry. / I'm thirsty.", say:"I'm happy. I'm sad. I'm hungry. I'm thirsty.", zh:"我很開心。／我很難過。／我肚子餓。／我口渴。", note_zh:"表達心情和感覺", note_en:"Expressing feelings",
+        ex_en:"I'm happy today! I'm not hungry now.", ex_zh:"我今天很開心！我現在不餓。" },
+      { en:"I'm sorry, I'm late. May I come in?", say:"I'm sorry, I'm late. May I come in?", zh:"對不起，我遲到了。我可以進來嗎？", note_zh:"上課遲到時", note_en:"Arriving late to class",
+        ex_en:"I'm sorry, I'm late. May I come in? Yes, please sit down quickly.", ex_zh:"對不起，我遲到了。我可以進來嗎？可以，請快點坐下。" },
+      { en:"Excuse me.", say:"Excuse me.", zh:"不好意思／請問一下。", note_zh:"想引起注意或借過時", note_en:"Getting attention / passing by",
+        ex_en:"Excuse me, may I ask a question?", ex_zh:"不好意思，我可以問一個問題嗎？" },
+      { en:"I'm sorry. / That's okay.", say:"I'm sorry. That's okay.", zh:"對不起。／沒關係。", note_zh:"一般道歉與回應", note_en:"A general apology and response",
+        ex_en:"I'm sorry! That's okay.", ex_zh:"對不起！沒關係。" },
+      { en:"Stand up. / Sit down.", say:"Stand up. Sit down.", zh:"起立。／坐下。", note_zh:"老師的課堂指令", note_en:"Teacher's classroom command",
+        ex_en:"Stand up, please. Sit down, please.", ex_zh:"請起立。請坐下。" },
+      { en:"Raise your hand.", say:"Raise your hand.", zh:"舉手。", note_zh:"發言前先舉手", note_en:"Raise your hand before speaking",
+        ex_en:"Raise your hand if you know the answer.", ex_zh:"如果你知道答案，請舉手。" },
+      { en:"Line up, please.", say:"Line up, please.", zh:"請排隊。", note_zh:"排隊時", note_en:"Lining up",
+        ex_en:"Line up, please. Don't push.", ex_zh:"請排隊，不要推擠。" },
+      { en:"Be quiet, please.", say:"Be quiet, please.", zh:"請安靜。", note_zh:"需要安靜時", note_en:"When it's time to be quiet",
+        ex_en:"Be quiet, please. Class is starting.", ex_zh:"請安靜，要上課了。" },
+      { en:"Turn to page ___.", say:"Turn to page ten.", zh:"翻到第___頁。", note_zh:"翻課本頁碼", note_en:"Turning to a textbook page",
+        ex_en:"Turn to page 10, please.", ex_zh:"請翻到第10頁。" },
+      { en:"May I go to the bathroom?", say:"May I go to the bathroom?", zh:"我可以去廁所嗎？", note_zh:"上課想上廁所", note_en:"Asking to use the restroom",
+        ex_en:"May I go to the bathroom? Yes, you may.", ex_zh:"我可以去廁所嗎？可以。" },
+      { en:"I don't understand.", say:"I don't understand.", zh:"我不懂。", note_zh:"聽不懂時", note_en:"When you don't understand",
+        ex_en:"I don't understand. Can you help me?", ex_zh:"我不懂，可以幫我嗎？" },
+      { en:"It's my turn. / It's your turn.", say:"It's my turn. It's your turn.", zh:"輪到我了。／輪到你了。", note_zh:"輪流時", note_en:"Taking turns",
+        ex_en:"It's my turn now. Okay, it's your turn next.", ex_zh:"現在輪到我了。好，接下來輪到你。" },
+      { en:"What day is it today? / It's Monday.", say:"What day is it today? It's Monday.", zh:"今天星期幾？／今天星期一。", note_zh:"問今天星期幾", note_en:"Asking what day it is",
+        ex_en:"What day is it today? It's Monday.", ex_zh:"今天星期幾？今天星期一。" },
+      { en:"See you next week!", say:"See you next week!", zh:"下週見！", note_zh:"學期/單元結束的道別", note_en:"Saying goodbye at the end",
+        ex_en:"Great job, everyone! See you next week!", ex_zh:"大家做得很好！下週見！" }
+    ];
+    var WEEK_START = new Date(2026, 7, 31); // 2026-08-31（115-1 學期第一週）
+
+    function getWeekIndex(){
+      var today = new Date();
+      var diffDays = Math.floor((today - WEEK_START) / 86400000);
+      var idx = Math.floor(diffDays / 7);
+      if (idx < 0) idx = 0;
+      if (idx > WEEKS.length - 1) idx = WEEKS.length - 1;
+      return idx;
+    }
+
+    function sentenceBlock(mp3id, sayText, enText, zhText, label){
+      return '<div class="word-audio-row">' + audioBtn('../assets/audio/' + mp3id + '.mp3', sayText) +
+        '<span>' + (label || '') + enText + '</span></div>' +
+        '<p class="bi-en-line">' + zhText + '</p>';
+    }
+
+    var currentWeekIdx = getWeekIndex();
+    var w = WEEKS[currentWeekIdx];
+    var weekNum = currentWeekIdx + 1;
+    document.getElementById('weekSentenceCurrent').innerHTML =
+      '<h2>第 ' + weekNum + ' 週</h2>' +
+      sentenceBlock('week' + weekNum, w.say, w.en, w.zh) +
+      '<p class="content-lede">情境：' + w.note_zh + '<span class="bi-en">' + w.note_en + '</span></p>' +
+      sentenceBlock('week' + weekNum + '-ex', w.ex_en, w.ex_en, w.ex_zh, '例句：');
+
+    var histRows = '';
+    for (var i = 0; i <= currentWeekIdx; i++){
+      var item = WEEKS[i];
+      histRows += '<tr><td>第' + (i+1) + '週</td>' +
+        '<td>' + audioBtn('../assets/audio/week' + (i+1) + '.mp3', item.say) + item.en + '<span class="bi-en">' + item.zh + '</span></td>' +
+        '<td>' + audioBtn('../assets/audio/week' + (i+1) + '-ex.mp3', item.ex_en) + item.ex_en + '<span class="bi-en">' + item.ex_zh + '</span></td></tr>';
+    }
+    document.getElementById('weekSentenceHistoryTable').innerHTML = histRows;
+
+    // ---------- 本月品格單字（Word → Heart → Hands） ----------
+    var CHAR_WORDS = [
+      { slug:'respect', en:'Respect', zh:'尊重', def:'尊重別人說話，也是在尊重自己。安靜下來，專心聆聽，就是最好的尊重。' },
+      { slug:'gratitude', en:'Gratitude', zh:'感恩', def:'說聲謝謝，溫暖會傳下去。記住別人對你的好，也把這份心意傳出去。' },
+      { slug:'politeness', en:'Politeness', zh:'禮貌', def:'一句請、一句謝謝，讓彼此更靠近。幾個禮貌的字，就能讓請求變得溫暖。' },
+      { slug:'honesty', en:'Honesty', zh:'誠實', def:'說實話，不會讓愛消失。就算犯了錯，誠實永遠是更勇敢的選擇。' },
+      { slug:'responsibility', en:'Responsibility', zh:'負責', def:'做好自己該做的事，大家都會信任你。就算沒人盯著，也要把答應的事完成。' },
+      { slug:'perseverance', en:'Perseverance', zh:'毅力', def:'努力不放棄，就會等到進步。跌倒不是結束，願意再站起來才會更堅強。' },
+      { slug:'courage', en:'Courage', zh:'勇敢', def:'勇敢跨出去，就會發現自己做得到。心跳加速時，深吸一口氣就是最好的開始。' },
+      { slug:'helping-others', en:'Helping Others', zh:'互助', def:'互相幫忙，讓朋友更靠近。看見別人需要幫忙時，一個小動作就能帶來大溫暖。' },
+      { slug:'sharing', en:'Sharing', zh:'分享', def:'分享讓快樂變成兩倍。當你擁有夠多，就分一點給需要的朋友。' },
+      { slug:'empathy', en:'Empathy', zh:'同理心', def:'留意別人的心情，是關心的第一步。不必解決所有事，陪伴就已足夠。' },
+      { slug:'teamwork', en:'Teamwork', zh:'合作', def:'合作，讓大事變得容易。當每個人都做好自己的部分，再大的任務也會變簡單。' }
+    ];
+    var CHAR_MONTHS = [[0,1],[2,3],[4,5],[6,7],[8,9],[10]]; // Words(3) → Heart(4) → Hands(4)，每月2個，最後一個月剩1個
+    var CHAR_MONTH_START = new Date(2026, 8, 1); // 2026-09-01 為第 1 個月
+
+    function getMonthIndex(){
+      var today = new Date();
+      var idx = (today.getFullYear() - CHAR_MONTH_START.getFullYear()) * 12 + (today.getMonth() - CHAR_MONTH_START.getMonth());
+      if (idx < 0) idx = 0;
+      if (idx > CHAR_MONTHS.length - 1) idx = CHAR_MONTHS.length - 1;
+      return idx;
+    }
+
+    function monthLabel(idx){
+      var d = new Date(CHAR_MONTH_START.getFullYear(), CHAR_MONTH_START.getMonth() + idx, 1);
+      return (d.getMonth() + 1) + '月';
+    }
+
+    function charWordBlock(item){
+      return '<div class="word-audio-row">' +
+        '<img class="char-badge" src="../assets/badges/' + item.slug + '.png" alt="" />' +
+        audioBtn('../assets/audio/' + item.slug + '.mp3', item.en) +
+        '<span><strong>' + item.en + '</strong>（' + item.zh + '）</span></div>' +
+        '<p class="content-lede">' + item.def + '</p>';
+    }
+
+    var currentMonthIdx = getMonthIndex();
+    var monthWordIdxs = CHAR_MONTHS[currentMonthIdx];
+    var monthWords = monthWordIdxs.map(function(idx){ return CHAR_WORDS[idx]; });
+
+    document.getElementById('charWordCurrent').innerHTML =
+      '<h2>' + monthLabel(currentMonthIdx) + '：' + monthWords.map(function(mw){ return mw.en; }).join(' / ') + '</h2>' +
+      monthWords.map(charWordBlock).join('');
+
+    var charHistRows = '';
+    for (var m = 0; m <= currentMonthIdx; m++){
+      CHAR_MONTHS[m].forEach(function(idx){
+        var item = CHAR_WORDS[idx];
+        charHistRows += '<tr><td>' + monthLabel(m) + '</td><td>' + audioBtn('../assets/audio/' + item.slug + '.mp3', item.en) + item.en + '</td>' +
+          '<td>' + item.zh + '</td></tr>';
+      });
+    }
+    document.getElementById('charWordHistoryTable').innerHTML = charHistRows;
+  })();
+  </script>
 
   <script>
   (function(){
