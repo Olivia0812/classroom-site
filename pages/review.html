@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8" />
-<title>知識冒險島 ｜ 北斗國小 3年○班</title>
+<title>知識冒險島 ｜ 克萊兒的教學小天地</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,9 +40,9 @@
   </header>
 
   <div class="subtab-nav" role="tablist" aria-label="複習分類">
-    <button type="button" class="subtab-btn" data-tab="l1-6">1-6課成語</button>
+    <button type="button" class="subtab-btn" data-tab="l1-6">第1-6課成語</button>
     <button type="button" class="subtab-btn is-active" data-tab="midterm">期中考複習</button>
-    <button type="button" class="subtab-btn" data-tab="l7-12">7-12課成語</button>
+    <button type="button" class="subtab-btn" data-tab="l7-12">第7-12課成語</button>
     <button type="button" class="subtab-btn" data-tab="final">期末考複習</button>
   </div>
 
@@ -167,10 +167,64 @@
   </div>
 
   <div class="subtab-panel" data-panel="final" hidden>
-    <section class="content-card content-placeholder">
-      <h2>🚧 期末考複習<span class="bi-en">Coming soon</span></h2>
-      <p class="content-lede">等 7-12 課的成語準備好，就會有期末複習關卡囉！</p>
-    </section>
+
+  <section class="content-card">
+    <h2>🌟 情境猜成語<span class="bi-en">Guess the idiom</span></h2>
+    <p class="content-lede">看看下面的小故事，猜猜是哪一句成語！</p>
+
+    <div class="quiz-game" id="finalIdiomGame">
+      <div class="quiz-meta">
+        <span class="tag" id="finalIdiomTag">第七課</span>
+        <span class="quiz-score-text">答對 <strong id="finalIdiomScore">0</strong> ／ <span id="finalIdiomTotal">0</span> 題</span>
+      </div>
+      <p class="quiz-prompt" id="finalIdiomPrompt">載入中……</p>
+      <div class="quiz-choices" id="finalIdiomChoices"></div>
+      <p class="quiz-feedback" id="finalIdiomFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="finalIdiomNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="finalIdiomReset">重新計分</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card">
+    <h2>🐉 成語接龍<span class="bi-en">Idiom streak challenge</span></h2>
+    <p class="content-lede">每個成語都藏著一個生字，把它接回去，看看你能連續答對幾題！</p>
+
+    <div class="quiz-game" id="finalChainGame">
+      <div class="quiz-meta">
+        <span class="tag" id="finalChainTag">第七課</span>
+        <span class="quiz-streak">🐉 連續答對 <strong id="finalChainStreak">0</strong> 題　🏆 最佳 <strong id="finalChainBest">0</strong> 題</span>
+      </div>
+      <p class="quiz-prompt" id="finalChainPrompt">載入中……</p>
+      <div class="quiz-choices" id="finalChainChoices"></div>
+      <p class="quiz-feedback" id="finalChainFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="finalChainNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="finalChainReset">重新挑戰</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card">
+    <h2>🔍 部首大挑戰<span class="bi-en">Radical challenge</span></h2>
+    <p class="content-lede">這個生字的部首是哪一個？選對了就能認識它跟哪一類的字有關！</p>
+
+    <div class="quiz-game" id="finalRadicalGame">
+      <div class="quiz-meta">
+        <span class="tag" id="finalRadicalTag">第七課</span>
+        <span class="quiz-score-text">答對 <strong id="finalRadicalScore">0</strong> ／ <span id="finalRadicalTotal">0</span> 題</span>
+      </div>
+      <p class="quiz-prompt" id="finalRadicalPrompt">載入中……</p>
+      <div class="quiz-choices" id="finalRadicalChoices"></div>
+      <p class="quiz-feedback" id="finalRadicalFeedback" hidden></p>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" type="button" id="finalRadicalNext">下一題 →</button>
+        <button class="btn btn-ghost" type="button" id="finalRadicalReset">重新計分</button>
+      </div>
+    </div>
+  </section>
+
   </div>
 
   <script>
@@ -190,8 +244,8 @@
 
   <script>
   (function(){
-    var lessonChinese = ["", "一", "二", "三", "四", "五", "六"];
-    var lessonTagClass = ["", "tag-coral", "tag-mustard", "tag-sky", "tag-sage", "tag-lavender", "tag-coral"];
+    var lessonChinese = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
+    var lessonTagClass = ["", "tag-coral", "tag-mustard", "tag-sky", "tag-sage", "tag-lavender", "tag-coral", "tag-mustard", "tag-sky", "tag-sage", "tag-lavender", "tag-coral", "tag-mustard"];
 
     function shuffle(arr){
       for (var i = arr.length - 1; i > 0; i--){
@@ -429,6 +483,158 @@
       totalEl: document.getElementById('radicalTotal'),
       nextBtn: document.getElementById('radicalNext'),
       resetBtn: document.getElementById('radicalReset'),
+      getPrompt: function(item){ return item.prompt; },
+      getMeaning: function(item){ return '「' + item.char + '」的部首是' + item.answer + '：' + item.meaning; },
+      correctPrefix: '答對了！',
+      wrongPrefix: '再想想～'
+    });
+
+    /* ---------- 期末考複習：情境猜成語（7-12課） ---------- */
+    var idiomBank712 = [
+      {lesson:7, answer:"離鄉背井", meaning:"離開家鄉，到外地生活", prompt:"小明的爸爸因為工作的關係，要離開家鄉到很遠的城市生活，好久才能回來一次。"},
+      {lesson:7, answer:"自命不凡", meaning:"自認為很了不起，不平凡", prompt:"小華覺得自己什麼都會，常常說自己是班上最厲害的人，一點都不謙虛。"},
+      {lesson:7, answer:"笑裡藏刀", meaning:"表面和善，內心卻懷有害人的心機", prompt:"那個人表面上對你很好、笑咪咪的，但心裡卻在計畫怎麼陷害你，讓人防不勝防。"},
+      {lesson:7, answer:"不學無術", meaning:"沒有學問，也沒有專長本領", prompt:"他平常都不認真讀書，也沒有學到什麼本領，做起事來什麼都不會。"},
+      {lesson:8, answer:"參差不齊", meaning:"高低、長短不一致，很不整齊", prompt:"這次剪頭髮剪得亂七八糟，有的地方長、有的地方短，看起來很不整齊。"},
+      {lesson:8, answer:"當機立斷", meaning:"遇到緊急狀況立刻做出決定", prompt:"看到前面突然有車子衝過來，司機立刻踩剎車轉方向，馬上做出反應，避開了危險。"},
+      {lesson:8, answer:"破鏡重圓", meaning:"感情破裂後又重新和好", prompt:"兩個吵架很久沒說話的好朋友，後來互相道歉，又和好變成好朋友了。"},
+      {lesson:8, answer:"牛刀小試", meaning:"稍微展現一下本領，就已經很厲害", prompt:"這位理髮師才剛開始工作，隨便剪一剪就剪得非常好看，可以看出他的功力深厚。"},
+      {lesson:8, answer:"一視同仁", meaning:"對每個人都一樣看待，沒有偏心", prompt:"老師對班上每個同學都一樣好，不會因為誰功課好或誰家裡有錢就特別偏心。"},
+      {lesson:9, answer:"披星戴月", meaning:"起早趕晚，形容工作非常辛勞", prompt:"醫生每天很早就出門、很晚才回家，日夜都在照顧病人，非常辛苦。"},
+      {lesson:9, answer:"旁敲側擊", meaning:"不直接說明，而是從側面試探、暗示", prompt:"他不好意思直接問，於是先聊別的話題，繞了一大圈，慢慢帶到他真正想問的問題。"},
+      {lesson:9, answer:"對症下藥", meaning:"針對問題的根本原因來解決", prompt:"醫生先仔細檢查是哪裡生病，找出真正的原因後，才開了最適合的藥給病人吃。"},
+      {lesson:9, answer:"有備無患", meaning:"事先做好準備，就不用擔心意外發生", prompt:"出門前先把急救箱、雨傘都準備好，這樣不管遇到什麼突發狀況都不用擔心。"},
+      {lesson:9, answer:"溫故知新", meaning:"複習學過的內容，進而學會新的知識", prompt:"每次複習以前教過的內容時，小美都會發現一些以前沒注意到的新東西，學到更多。"},
+      {lesson:10, answer:"氣象萬千", meaning:"形容景象變化多端，非常壯觀美麗", prompt:"天空中出現了七彩的極光，一下子變綠色、一下子變紫色，景色一直在變化，非常漂亮。"},
+      {lesson:10, answer:"雪中送炭", meaning:"在別人急需幫助時，即時伸出援手", prompt:"朋友肚子餓、又沒有食物的時候，他馬上把自己的食物分給朋友吃，即時幫了大忙。"},
+      {lesson:10, answer:"腳踏實地", meaning:"做事一步一步、踏踏實實，不投機取巧", prompt:"他不會想找捷徑，而是每天按部就班地練習，一步一步累積實力。"},
+      {lesson:10, answer:"目瞪口呆", meaning:"因為驚訝而愣住，說不出話來", prompt:"看到眼前這麼神奇的魔術表演，大家都嚇了一跳，張大嘴巴說不出話來。"},
+      {lesson:10, answer:"舉一反三", meaning:"從一件事情類推，學會其他相似的事", prompt:"學會怎麼解一種數學題目後，他馬上就能用同樣的方法解出其他類似的題目。"},
+      {lesson:11, answer:"威風凜凜", meaning:"形容氣勢雄壯，令人敬畏", prompt:"石虎站在高高的岩石上，抬頭挺胸的樣子看起來非常有氣勢，讓人忍不住多看幾眼。"},
+      {lesson:11, answer:"焦頭爛額", meaning:"形容做事慌亂、忙得不可開交", prompt:"鳥媽媽要餵好幾隻嗷嗷待哺的小鳥，忙進忙出，一刻都不能休息，忙得暈頭轉向。"},
+      {lesson:11, answer:"心驚肉跳", meaning:"形容非常害怕、驚慌不安", prompt:"看到車子突然衝過來，石虎嚇得心臟撲通撲通跳個不停，全身都在發抖。"},
+      {lesson:11, answer:"萬紫千紅", meaning:"形容百花盛開，色彩繽紛美麗", prompt:"春天到了，公園裡開滿了各種顏色的花，紅的、紫的、黃的，看起來色彩繽紛非常美麗。"},
+      {lesson:11, answer:"觸類旁通", meaning:"學會一件事後，能類推學會相關的事", prompt:"學會怎麼在樹枝間找路之後，石虎很快就知道怎麼在其他複雜的地方找到出路。"},
+      {lesson:12, answer:"無懈可擊", meaning:"完美到沒有任何缺點可以挑剔", prompt:"獨角仙的攻擊招式又快又準，完全找不到任何破綻，讓對手完全沒有反擊的機會。"},
+      {lesson:12, answer:"勢均力敵", meaning:"雙方力量相當，難分高下", prompt:"兩隻鍬形蟲的力氣不相上下，打了好久都分不出誰輸誰贏。"},
+      {lesson:12, answer:"開源節流", meaning:"一邊增加收入，一邊減少支出", prompt:"螞蟻們一邊努力尋找更多食物，一邊也小心不浪費，把食物省著慢慢吃。"},
+      {lesson:12, answer:"胸有成竹", meaning:"事前已有準備，心裡很有把握", prompt:"螳螂早就想好了作戰計畫，一點都不緊張，因為牠對自己的策略非常有把握。"},
+      {lesson:12, answer:"打退堂鼓", meaning:"遇到困難就想放棄、退縮", prompt:"遇到一點點困難，毛毛蟲就想放棄不做了，完全不想繼續努力下去。"}
+    ];
+
+    createQuiz({
+      bank: idiomBank712,
+      mode: 'score',
+      promptEl: document.getElementById('finalIdiomPrompt'),
+      choicesEl: document.getElementById('finalIdiomChoices'),
+      feedbackEl: document.getElementById('finalIdiomFeedback'),
+      tagEl: document.getElementById('finalIdiomTag'),
+      scoreEl: document.getElementById('finalIdiomScore'),
+      totalEl: document.getElementById('finalIdiomTotal'),
+      nextBtn: document.getElementById('finalIdiomNext'),
+      resetBtn: document.getElementById('finalIdiomReset'),
+      getPrompt: function(item){ return item.prompt; },
+      getMeaning: function(item){ return '「' + item.answer + '」：' + item.meaning; },
+      correctPrefix: '答對了！',
+      wrongPrefix: '再想想～正確答案是'
+    });
+
+    /* ---------- 期末考複習：成語接龍（7-12課） ---------- */
+    var chainBank712 = [
+      {lesson:7, answer:"鄉", full:"離鄉背井", meaning:"離開家鄉，到外地生活", prompt:"離＿背井"},
+      {lesson:7, answer:"命", full:"自命不凡", meaning:"自認為很了不起，不平凡", prompt:"自＿不凡"},
+      {lesson:7, answer:"刀", full:"笑裡藏刀", meaning:"表面和善，內心卻懷有害人的心機", prompt:"笑裡藏＿"},
+      {lesson:7, answer:"術", full:"不學無術", meaning:"沒有學問，也沒有專長本領", prompt:"不學無＿"},
+      {lesson:8, answer:"齊", full:"參差不齊", meaning:"高低、長短不一致，很不整齊", prompt:"參差不＿"},
+      {lesson:8, answer:"斷", full:"當機立斷", meaning:"遇到緊急狀況立刻做出決定", prompt:"當機立＿"},
+      {lesson:8, answer:"圓", full:"破鏡重圓", meaning:"感情破裂後又重新和好", prompt:"破鏡重＿"},
+      {lesson:8, answer:"試", full:"牛刀小試", meaning:"稍微展現一下本領，就已經很厲害", prompt:"牛刀小＿"},
+      {lesson:8, answer:"仁", full:"一視同仁", meaning:"對每個人都一樣看待，沒有偏心", prompt:"一視同＿"},
+      {lesson:9, answer:"星", full:"披星戴月", meaning:"起早趕晚，形容工作非常辛勞", prompt:"披＿戴月"},
+      {lesson:9, answer:"擊", full:"旁敲側擊", meaning:"不直接說明，而是從側面試探、暗示", prompt:"旁敲側＿"},
+      {lesson:9, answer:"藥", full:"對症下藥", meaning:"針對問題的根本原因來解決", prompt:"對症下＿"},
+      {lesson:9, answer:"患", full:"有備無患", meaning:"事先做好準備，就不用擔心意外發生", prompt:"有備無＿"},
+      {lesson:9, answer:"溫", full:"溫故知新", meaning:"複習學過的內容，進而學會新的知識", prompt:"＿故知新"},
+      {lesson:10, answer:"萬", full:"氣象萬千", meaning:"形容景象變化多端，非常壯觀美麗", prompt:"氣象＿千"},
+      {lesson:10, answer:"炭", full:"雪中送炭", meaning:"在別人急需幫助時，即時伸出援手", prompt:"雪中送＿"},
+      {lesson:10, answer:"踏", full:"腳踏實地", meaning:"做事一步一步、踏踏實實，不投機取巧", prompt:"腳＿實地"},
+      {lesson:10, answer:"呆", full:"目瞪口呆", meaning:"因為驚訝而愣住，說不出話來", prompt:"目瞪口＿"},
+      {lesson:10, answer:"反", full:"舉一反三", meaning:"從一件事情類推，學會其他相似的事", prompt:"舉一＿三"},
+      {lesson:11, answer:"凜", full:"威風凜凜", meaning:"形容氣勢雄壯，令人敬畏", prompt:"威風＿凜"},
+      {lesson:11, answer:"額", full:"焦頭爛額", meaning:"形容做事慌亂、忙得不可開交", prompt:"焦頭爛＿"},
+      {lesson:11, answer:"跳", full:"心驚肉跳", meaning:"形容非常害怕、驚慌不安", prompt:"心驚肉＿"},
+      {lesson:11, answer:"紫", full:"萬紫千紅", meaning:"形容百花盛開，色彩繽紛美麗", prompt:"萬＿千紅"},
+      {lesson:11, answer:"觸", full:"觸類旁通", meaning:"學會一件事後，能類推學會相關的事", prompt:"＿類旁通"},
+      {lesson:12, answer:"懈", full:"無懈可擊", meaning:"完美到沒有任何缺點可以挑剔", prompt:"無＿可擊"},
+      {lesson:12, answer:"均", full:"勢均力敵", meaning:"雙方力量相當，難分高下", prompt:"勢＿力敵"},
+      {lesson:12, answer:"源", full:"開源節流", meaning:"一邊增加收入，一邊減少支出", prompt:"開＿節流"},
+      {lesson:12, answer:"竹", full:"胸有成竹", meaning:"事前已有準備，心裡很有把握", prompt:"胸有成＿"},
+      {lesson:12, answer:"鼓", full:"打退堂鼓", meaning:"遇到困難就想放棄、退縮", prompt:"打退堂＿"}
+    ];
+
+    createQuiz({
+      bank: chainBank712,
+      mode: 'streak',
+      bestKey: 'chainBestStreak712',
+      promptEl: document.getElementById('finalChainPrompt'),
+      choicesEl: document.getElementById('finalChainChoices'),
+      feedbackEl: document.getElementById('finalChainFeedback'),
+      tagEl: document.getElementById('finalChainTag'),
+      streakEl: document.getElementById('finalChainStreak'),
+      bestEl: document.getElementById('finalChainBest'),
+      nextBtn: document.getElementById('finalChainNext'),
+      resetBtn: document.getElementById('finalChainReset'),
+      getPrompt: function(item){ return item.prompt.replace('＿', '<span class="blank-char">＿</span>'); },
+      getMeaning: function(item){ return '「' + item.full + '」：' + item.meaning; },
+      correctPrefix: '接對了！完整成語是',
+      wrongPrefix: '斷了一節～正確答案是'
+    });
+
+    /* ---------- 期末考複習：部首大挑戰（7-12課） ---------- */
+    var radicalBank712 = [
+      {lesson:7, char:"離", answer:"隹（短尾鳥）", meaning:"字裡藏著一隻短尾巴的小鳥"},
+      {lesson:7, char:"命", answer:"口（口字部）", meaning:"跟嘴巴、說話有關"},
+      {lesson:7, char:"刀", answer:"刀（自己就是部首）", meaning:"跟刀、切割有關"},
+      {lesson:7, char:"術", answer:"行（行字部）", meaning:"跟行走、道路有關"},
+      {lesson:8, char:"參", answer:"厶（私字部）", meaning:"跟自己、私人有關"},
+      {lesson:8, char:"斷", answer:"斤（斤字旁）", meaning:"跟斧頭、砍斷有關"},
+      {lesson:8, char:"鏡", answer:"金（金字旁）", meaning:"跟金屬有關"},
+      {lesson:8, char:"試", answer:"言（言字旁）", meaning:"跟說話、文字有關"},
+      {lesson:8, char:"仁", answer:"人／亻（人字旁）", meaning:"跟人有關"},
+      {lesson:9, char:"披", answer:"扌（提手旁）", meaning:"跟手的動作有關"},
+      {lesson:9, char:"敲", answer:"攴／攵（攴字旁）", meaning:"跟輕輕拍打、敲擊有關"},
+      {lesson:9, char:"藥", answer:"艸／艹（草字頭）", meaning:"跟植物、草藥有關"},
+      {lesson:9, char:"患", answer:"心（心字底）", meaning:"跟心情、感覺有關"},
+      {lesson:9, char:"溫", answer:"水／氵（水字旁）", meaning:"跟水有關"},
+      {lesson:10, char:"氣", answer:"气（气字部）", meaning:"跟氣體、空氣有關"},
+      {lesson:10, char:"炭", answer:"火（火字部）", meaning:"跟火、燃燒有關"},
+      {lesson:10, char:"踏", answer:"足（足字旁）", meaning:"跟腳、走路有關"},
+      {lesson:10, char:"瞪", answer:"目（目字旁）", meaning:"跟眼睛、看有關"},
+      {lesson:10, char:"舉", answer:"手（手字部）", meaning:"跟手的動作有關"},
+      {lesson:11, char:"威", answer:"女（女字部）", meaning:"字形跟女字有關"},
+      {lesson:11, char:"焦", answer:"火（火字部）", meaning:"跟火、燃燒有關"},
+      {lesson:11, char:"驚", answer:"馬（馬字部）", meaning:"跟馬有關"},
+      {lesson:11, char:"紅", answer:"糸（糸字旁）", meaning:"跟絲線、顏色有關"},
+      {lesson:11, char:"觸", answer:"角（角字旁）", meaning:"跟角、觸角有關"},
+      {lesson:12, char:"懈", answer:"心／忄（豎心旁）", meaning:"跟心情、態度有關"},
+      {lesson:12, char:"勢", answer:"力（力字部）", meaning:"跟力量有關"},
+      {lesson:12, char:"源", answer:"水／氵（水字旁）", meaning:"跟水有關"},
+      {lesson:12, char:"胸", answer:"月（月字旁，肉部）", meaning:"跟身體有關"},
+      {lesson:12, char:"鼓", answer:"鼓（自己就是部首）", meaning:"跟打鼓、敲擊有關"}
+    ];
+    radicalBank712.forEach(function(item){ item.prompt = '「' + item.char + '」的部首是？'; });
+
+    createQuiz({
+      bank: radicalBank712,
+      mode: 'score',
+      promptEl: document.getElementById('finalRadicalPrompt'),
+      choicesEl: document.getElementById('finalRadicalChoices'),
+      feedbackEl: document.getElementById('finalRadicalFeedback'),
+      tagEl: document.getElementById('finalRadicalTag'),
+      scoreEl: document.getElementById('finalRadicalScore'),
+      totalEl: document.getElementById('finalRadicalTotal'),
+      nextBtn: document.getElementById('finalRadicalNext'),
+      resetBtn: document.getElementById('finalRadicalReset'),
       getPrompt: function(item){ return item.prompt; },
       getMeaning: function(item){ return '「' + item.char + '」的部首是' + item.answer + '：' + item.meaning; },
       correctPrefix: '答對了！',
