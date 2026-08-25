@@ -396,8 +396,25 @@ body.scene-friendly-campus{ --scene-img: url('assets/scene-friendly-campus.jpg')
 .idiom-page + .idiom-page{ margin-top:1rem; }
 
 /* ---------- flipbook (paginated picture-book viewer) ---------- */
-.flipbook-page{ display:none; }
-.flipbook-page.is-active{ display:block; }
+.flipbook-viewport{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--surface-2);
+  box-shadow:var(--shadow);
+}
+.flipbook-viewport .flipbook-page{
+  display:none;
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:contain;
+  box-shadow:none;
+  border-radius:0;
+  cursor:zoom-in;
+}
+.flipbook-viewport .flipbook-page.is-active{ display:block; }
 .flipbook-page + .flipbook-page{ margin-top:0; }
 .flipbook-nav{
   display:flex;
