@@ -20,6 +20,8 @@
       <a href="review.html" aria-current="page"><span class="nav-zh">知識冒險島</span><span class="nav-en">Adventure Island</span></a>
       <a href="gallery.html"><span class="nav-zh">小小創作家</span><span class="nav-en">My Creative Work</span></a>
       <a href="character.html"><span class="nav-zh">品格超能力</span><span class="nav-en">My Superpowers</span></a>
+      <a href="disaster-prep.html"><span class="nav-zh">防災教育</span><span class="nav-en">Safety Squad</span></a>
+      <a href="friendly-campus.html"><span class="nav-zh">友善校園</span><span class="nav-en">Kindness Club</span></a>
       <a class="nav-external" href="#" target="_blank" rel="noopener"><span class="nav-zh">佈告欄</span><span class="nav-en">Class News</span></a>
     </div>
   </nav>
@@ -640,6 +642,32 @@
       correctPrefix: '答對了！',
       wrongPrefix: '再想想～'
     });
+  })();
+  </script>
+
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="關閉">✕</button>
+    <img src="" alt="" />
+  </div>
+  <script>
+  (function(){
+    var overlay = document.getElementById('lightbox');
+    var overlayImg = overlay.querySelector('img');
+    function openLightbox(src, alt){
+      overlayImg.src = src;
+      overlayImg.alt = alt || '';
+      overlay.classList.add('is-open');
+    }
+    function closeLightbox(){
+      overlay.classList.remove('is-open');
+      overlayImg.src = '';
+    }
+    document.querySelectorAll('.idiom-page').forEach(function(img){
+      img.addEventListener('click', function(){ openLightbox(img.src, img.alt); });
+    });
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) closeLightbox(); });
+    overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
   })();
   </script>
 

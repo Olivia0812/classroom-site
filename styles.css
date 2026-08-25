@@ -275,6 +275,8 @@ body.scene-review{ --scene-img: url('assets/scene-review.jpg'); }
 body.scene-gallery{ --scene-img: url('assets/scene-gallery.jpg'); }
 body.scene-character{ --scene-img: url('assets/scene-character.jpg'); }
 body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
+body.scene-disaster-prep{ --scene-img: url('assets/scene-disaster-prep.jpg'); }
+body.scene-friendly-campus{ --scene-img: url('assets/scene-friendly-campus.jpg'); }
 
 /* ---------- stat strip ---------- */
 .stat-strip{
@@ -369,6 +371,8 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
 .card-scene-review{ --scene-img: url('assets/scene-review.jpg'); }
 .card-scene-gallery{ --scene-img: url('assets/scene-gallery.jpg'); }
 .card-scene-character{ --scene-img: url('assets/scene-character.jpg'); }
+.card-scene-disaster-prep{ --scene-img: url('assets/scene-disaster-prep.jpg'); }
+.card-scene-friendly-campus{ --scene-img: url('assets/scene-friendly-campus.jpg'); }
 
 /* ---------- content card (subpage sections) ---------- */
 .content-card{
@@ -387,8 +391,33 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
 .content-card h2{ margin:.1rem 0 .7rem; font-size:1.7rem; font-weight:800; text-wrap:balance; }
 .content-card h3{ margin:1.3rem 0 .6rem; font-size:1.2rem; font-weight:800; }
 .content-lede{ margin:0 0 .9rem; max-width:60ch; font-size:1.05rem; }
-.idiom-page{ display:block; width:100%; border-radius:14px; box-shadow:var(--shadow); }
+.idiom-page{ display:block; width:100%; border-radius:14px; box-shadow:var(--shadow); cursor:zoom-in; transition:opacity .15s ease; }
+.idiom-page:hover{ opacity:.9; }
 .idiom-page + .idiom-page{ margin-top:1rem; }
+
+/* ---------- lightbox (click-to-zoom for lesson/idiom images) ---------- */
+.lightbox-overlay{
+  display:none;
+  position:fixed; inset:0; z-index:999;
+  background:rgba(20,20,30,.85);
+  align-items:center; justify-content:center;
+  padding:2rem;
+  cursor:zoom-out;
+}
+.lightbox-overlay.is-open{ display:flex; }
+.lightbox-overlay img{
+  max-width:100%; max-height:100%;
+  border-radius:12px;
+  box-shadow:0 20px 50px -10px rgba(0,0,0,.6);
+}
+.lightbox-close{
+  position:fixed; top:1.2rem; right:1.4rem;
+  width:42px; height:42px; border-radius:50%;
+  border:none; background:rgba(255,255,255,.92); color:#333;
+  font-size:1.4rem; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
 .content-note{ color:var(--ink-soft); font-size:.92rem; margin:.6rem 0 0; }
 
 /* ---------- subtab nav (review page level split) ---------- */
@@ -694,7 +723,8 @@ body.scene-festival{ --scene-img: url('assets/scene-festival.jpg'); }
 .audio-hint{ font-size:.8rem; color:var(--ink-soft); }
 .audio-hint .en{ display:block; font-style:italic; font-size:.85em; margin-top:.1em; }
 
-.lesson-image{ display:block; width:100%; border-radius:16px; box-shadow:var(--shadow); margin-bottom:1.2rem; }
+.lesson-image{ display:block; width:100%; border-radius:16px; box-shadow:var(--shadow); margin-bottom:1.2rem; cursor:zoom-in; transition:opacity .15s ease; }
+.lesson-image:hover{ opacity:.9; }
 .char-badge{ width:34px; height:34px; border-radius:50%; object-fit:cover; flex:0 0 auto; box-shadow:var(--shadow); margin-right:.2rem; }
 .bi-en-line{ font-style:italic; color:var(--ink-soft); font-size:.9em; margin:-.5rem 0 .9rem; }
 .word-chip-grid{ display:flex; flex-wrap:wrap; gap:.6rem; padding:0; margin:0; list-style:none; }

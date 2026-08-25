@@ -20,6 +20,8 @@
       <a href="review.html"><span class="nav-zh">知識冒險島</span><span class="nav-en">Adventure Island</span></a>
       <a href="gallery.html"><span class="nav-zh">小小創作家</span><span class="nav-en">My Creative Work</span></a>
       <a href="character.html"><span class="nav-zh">品格超能力</span><span class="nav-en">My Superpowers</span></a>
+      <a href="disaster-prep.html"><span class="nav-zh">防災教育</span><span class="nav-en">Safety Squad</span></a>
+      <a href="friendly-campus.html"><span class="nav-zh">友善校園</span><span class="nav-en">Kindness Club</span></a>
       <a class="nav-external" href="#" target="_blank" rel="noopener"><span class="nav-zh">佈告欄</span><span class="nav-en">Class News</span></a>
     </div>
   </nav>
@@ -34,52 +36,156 @@
       <div>
         <p class="eyebrow eyebrow-coral">節慶萬花筒<span class="bi-en">Festival Fun</span></p>
         <h1>跟著節慶，多學一點英文</h1>
-        <p>每個節慶都準備了相關單字、音樂和影片，讓孩子回家也能多認識不同節慶的英文說法。<span class="bi-en">Festival words, songs, and videos to explore at home.</span></p>
+        <p>每個節慶都準備了 5 個單字和 3 句練習句，讓孩子回家也能多認識不同節慶的英文說法。<span class="bi-en">Festival words and practice sentences to explore at home.</span></p>
       </div>
     </div>
   </header>
 
-  <section class="content-card">
-    <p class="eyebrow eyebrow-coral">本季單字</p>
-    <h2>中秋節 Mid-Autumn Festival</h2>
-    <ul class="detail-list">
-      <li>
-        <div class="word-audio-row" style="margin:0">
-          <button class="audio-btn small" type="button" data-audio="../assets/audio/mooncake.mp3" data-word="mooncake" aria-label="播放 mooncake 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>
-          <span><strong>mooncake</strong>（月餅）— We eat mooncakes at the Mid-Autumn Festival.</span>
-        </div>
-      </li>
-      <li>
-        <div class="word-audio-row" style="margin:0">
-          <button class="audio-btn small" type="button" data-audio="../assets/audio/lantern.mp3" data-word="lantern" aria-label="播放 lantern 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>
-          <span><strong>lantern</strong>（燈籠）— We carry a lantern under the moon.</span>
-        </div>
-      </li>
-      <li>
-        <div class="word-audio-row" style="margin:0">
-          <button class="audio-btn small" type="button" data-audio="../assets/audio/reunion.mp3" data-word="reunion" aria-label="播放 reunion 發音"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg></button>
-          <span><strong>reunion</strong>（團圓）— Mid-Autumn Festival is a time for family reunion.</span>
-        </div>
-      </li>
-    </ul>
-    <p class="content-note"><span class="tag tag-coral">歌曲／影片</span> 應景英文歌曲或影片連結，準備好之後補在這裡。</p>
-  </section>
+  <div class="subtab-nav" role="tablist" aria-label="節慶分類">
+    <button type="button" class="subtab-btn is-active" data-tab="f0">🌕 中秋節</button>
+    <button type="button" class="subtab-btn" data-tab="f1">🎃 萬聖節</button>
+    <button type="button" class="subtab-btn" data-tab="f2">🎄 聖誕節</button>
+    <button type="button" class="subtab-btn" data-tab="f3">🧧 新年</button>
+    <button type="button" class="subtab-btn" data-tab="f4">🐰 復活節</button>
+    <button type="button" class="subtab-btn" data-tab="f5">🌍 地球日</button>
+    <button type="button" class="subtab-btn" data-tab="f6">💐 母親節</button>
+    <button type="button" class="subtab-btn" data-tab="f7">🐉 端午節</button>
+    <button type="button" class="subtab-btn" data-tab="f8">👔 父親節</button>
+  </div>
 
-  <section class="content-card">
-    <h2>本學年度節慶單字計畫<span class="bi-en">This year's festival words</span></h2>
-    <ul class="detail-list">
-      <li><span class="tag tag-coral">9 月</span> 中秋節 Mid-Autumn Festival — 進行中</li>
-      <li><span class="tag tag-coral">12 月</span> 聖誕節 Christmas</li>
-      <li><span class="tag tag-coral">1 月</span> 新年 New Year</li>
-      <li><span class="tag tag-coral">4 月</span> 復活節 Easter</li>
-      <li><span class="tag tag-coral">4 月</span> 地球日 Earth Day</li>
-      <li><span class="tag tag-coral">5 月</span> 母親節 Mother's Day</li>
-    </ul>
-    <p class="content-note">每個節慶開始前，會更新對應的單字、歌曲與影片。</p>
-  </section>
+  <div class="subtab-panel" data-panel="f0"><section class="content-card" id="festivalPanel-f0"></section></div>
+  <div class="subtab-panel" data-panel="f1" hidden><section class="content-card" id="festivalPanel-f1"></section></div>
+  <div class="subtab-panel" data-panel="f2" hidden><section class="content-card" id="festivalPanel-f2"></section></div>
+  <div class="subtab-panel" data-panel="f3" hidden><section class="content-card" id="festivalPanel-f3"></section></div>
+  <div class="subtab-panel" data-panel="f4" hidden><section class="content-card" id="festivalPanel-f4"></section></div>
+  <div class="subtab-panel" data-panel="f5" hidden><section class="content-card" id="festivalPanel-f5"></section></div>
+  <div class="subtab-panel" data-panel="f6" hidden><section class="content-card" id="festivalPanel-f6"></section></div>
+  <div class="subtab-panel" data-panel="f7" hidden><section class="content-card" id="festivalPanel-f7"></section></div>
+  <div class="subtab-panel" data-panel="f8" hidden><section class="content-card" id="festivalPanel-f8"></section></div>
 
   <script>
   (function(){
+    var tabBtns = document.querySelectorAll('.subtab-btn');
+    var panels = document.querySelectorAll('.subtab-panel');
+    tabBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        tabBtns.forEach(function(b){ b.classList.remove('is-active'); });
+        panels.forEach(function(p){ p.hidden = true; });
+        btn.classList.add('is-active');
+        document.querySelector('.subtab-panel[data-panel="' + btn.dataset.tab + '"]').hidden = false;
+      });
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var AUDIO_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg>';
+
+    function audioBtn(mp3, word){
+      return '<button class="audio-btn small" type="button" data-audio="' + mp3 + '" data-word="' + word.replace(/"/g,'&quot;') + '" aria-label="播放發音">' + AUDIO_SVG + '</button>';
+    }
+
+    var FESTIVALS = [
+      { id:'f0', emoji:'🌕', zh:'中秋節', en:'Mid-Autumn Festival', date:'2026年9月25日・September', greeting:'Happy Mid-Autumn Festival!',
+        words:[['Mooncake','月餅'],['Pomelo','柚子'],['Barbecue','烤肉'],['Watch the moon','賞月'],['Full Moon','滿月']],
+        sentences:[
+          ['Happy Mid-Autumn Festival!','中秋節快樂！'],
+          ["I love mooncakes!",'我愛月餅！'],
+          ["Let's watch the full moon!",'一起來看月亮！']
+        ] },
+      { id:'f1', emoji:'🎃', zh:'萬聖節', en:'Halloween', date:'10月31日（固定）・October', greeting:'Happy Halloween!',
+        words:[['Pumpkin','南瓜'],['Spider','蜘蛛'],['Ghost','鬼'],['Black cat','黑貓'],['Witch','女巫']],
+        sentences:[
+          ['Happy Halloween!','萬聖節快樂！'],
+          ['Trick or treat!','不給糖就搗蛋！'],
+          ['Look, a pumpkin!','你看，南瓜！']
+        ],
+        videos:[['HdsxHxrDEzs','Knock Knock, Trick Or Treat?']] },
+      { id:'f2', emoji:'🎄', zh:'聖誕節', en:'Christmas', date:'12月25日（固定）・December', greeting:'Merry Christmas!',
+        words:[['Christmas tree','聖誕樹'],['Present','禮物'],['Santa Claus','聖誕老公公'],['Snowman','雪人'],['Candy cane','拐杖糖']],
+        sentences:[
+          ['Merry Christmas!','聖誕快樂！'],
+          ['I love my present!','我喜歡我的禮物！'],
+          ['Here comes Santa Claus!','聖誕老公公來了！']
+        ],
+        videos:[['1O_l17dvWXg','We Wish You A Merry Christmas'],['4YBGRGBj7_w','Jingle Bells']] },
+      { id:'f3', emoji:'🧧', zh:'新年', en:'New Year', date:'2027年2月6日・February', greeting:'Happy New Year!',
+        words:[['Red Envelope','紅包'],['Dumpling','水餃'],['Fireworks','煙火'],['Lantern','燈籠'],['Lion Dance','舞獅']],
+        sentences:[
+          ['Happy New Year!','新年快樂！'],
+          ["Here's your red envelope!",'紅包給你！'],
+          ["Let's eat dumplings!",'一起吃水餃！']
+        ] },
+      { id:'f4', emoji:'🐰', zh:'復活節', en:'Easter', date:'2027年3月28日・March', greeting:'Happy Easter!',
+        words:[['Bunny','兔子'],['Basket','籃子'],['Egg','彩蛋'],['Chick','小雞'],['Chocolate','巧克力']],
+        sentences:[
+          ['Happy Easter!','復活節快樂！'],
+          ['Look, an Easter egg!','你看，復活節彩蛋！'],
+          ['I love the bunny!','我喜歡兔兔！']
+        ],
+        videos:[['Mfz3gSyoOWE','Easter Song for Kids']] },
+      { id:'f5', emoji:'🌍', zh:'地球日', en:'Earth Day', date:'4月22日（固定）・April', greeting:'Happy Earth Day!',
+        words:[['Recycle','回收'],['Reduce','減少'],['Reuse','重複使用'],['Earth','地球'],['Tree','樹']],
+        sentences:[
+          ['Happy Earth Day!','地球日快樂！'],
+          ['I can recycle to help the Earth.','我可以回收來幫助地球。'],
+          ["Let's plant a tree!",'一起種一棵樹！']
+        ],
+        videos:[['Ey8YPJuuHMw','Earth Day Song - Reduce Reuse Recycle Dance']] },
+      { id:'f6', emoji:'💐', zh:'母親節', en:"Mother's Day", date:'2027年5月9日・May', greeting:"Happy Mother's Day!",
+        words:[['Mother','媽媽'],['Love','愛'],['Flower','花'],['Card','卡片'],['Hug','擁抱']],
+        sentences:[
+          ["Happy Mother's Day!",'母親節快樂！'],
+          ['I love you, Mom!','我愛妳，媽媽！'],
+          ['This flower is for you!','這朵花給妳！']
+        ] },
+      { id:'f7', emoji:'🐉', zh:'端午節', en:'Dragon Boat Festival', date:'2027年6月9日・June', greeting:'Happy Dragon Boat Festival!',
+        words:[['Dragon boat','龍舟'],['Rice dumpling','粽子'],['Race','比賽'],['River','河'],['Dragon','龍']],
+        sentences:[
+          ['Happy Dragon Boat Festival!','端午節快樂！'],
+          ['I love rice dumplings!','我愛粽子！'],
+          ["Let's watch the dragon boat race!",'一起看划龍舟！']
+        ] },
+      { id:'f8', emoji:'👔', zh:'父親節', en:"Father's Day", date:'8月8日（固定）・August', greeting:"Happy Father's Day!",
+        words:[['Father','爸爸'],['Love','愛'],['Tie','領帶'],['Card','卡片'],['Hug','擁抱']],
+        sentences:[
+          ["Happy Father's Day!",'父親節快樂！'],
+          ['I love you, Dad!','我愛你，爸爸！'],
+          ['This card is for you!','這張卡片給你！']
+        ] }
+    ];
+
+    FESTIVALS.forEach(function(fest){
+      var wordsHtml = fest.words.map(function(w){
+        var slug = w[0].toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+        return '<li class="word-chip">' + audioBtn('../assets/audio/' + slug + '.mp3', w[0]) + w[0] + '（' + w[1] + '）</li>';
+      }).join('');
+
+      var sentencesHtml = fest.sentences.map(function(s, i){
+        var slug = fest.id + '-s' + i;
+        return '<div class="word-audio-row">' + audioBtn('../assets/audio/' + slug + '.mp3', s[0]) + '<span>' + s[0] + '</span></div>' +
+          '<p class="bi-en-line">' + s[1] + '</p>';
+      }).join('');
+
+      var videosHtml = '';
+      if (fest.videos && fest.videos.length){
+        videosHtml = '<h3>應景歌曲<span class="bi-en">Festival songs</span></h3>' +
+          fest.videos.map(function(v){
+            return '<div class="trait-video-wrap"><iframe class="trait-video" src="https://www.youtube-nocookie.com/embed/' + v[0] + '" title="' + v[1] + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+          }).join('');
+      }
+
+      document.getElementById('festivalPanel-' + fest.id).innerHTML =
+        '<p class="eyebrow eyebrow-coral">' + fest.date + '</p>' +
+        '<h2>' + fest.emoji + ' ' + fest.zh + ' ' + fest.en + '</h2>' +
+        '<p class="content-lede">' + fest.greeting + '</p>' +
+        '<ul class="word-chip-grid">' + wordsHtml + '</ul>' +
+        '<h3>練習句<span class="bi-en">Practice sentences</span></h3>' +
+        sentencesHtml +
+        videosHtml;
+    });
+
     function speak(word){
       if (!word || !('speechSynthesis' in window)) return;
       var utter = new SpeechSynthesisUtterance(word);
@@ -88,14 +194,14 @@
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(utter);
     }
-    document.querySelectorAll('.audio-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var src = btn.getAttribute('data-audio');
-        var word = btn.getAttribute('data-word');
-        var audio = new Audio(src);
-        audio.addEventListener('error', function(){ speak(word); });
-        audio.play().catch(function(){ speak(word); });
-      });
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest('.audio-btn');
+      if (!btn) return;
+      var src = btn.getAttribute('data-audio');
+      var word = btn.getAttribute('data-word');
+      var audio = new Audio(src);
+      audio.addEventListener('error', function(){ speak(word); });
+      audio.play().catch(function(){ speak(word); });
     });
   })();
   </script>
