@@ -67,7 +67,8 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
-          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="en" aria-label="英文朗讀">🔊 英文</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="zh" aria-label="中文朗讀">🔊 中文</button>
         </div>
       </div>
     </section>
@@ -98,7 +99,8 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
-          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="en" aria-label="英文朗讀">🔊 英文</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="zh" aria-label="中文朗讀">🔊 中文</button>
         </div>
       </div>
     </section>
@@ -124,7 +126,8 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
-          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="en" aria-label="英文朗讀">🔊 英文</button>
+          <button type="button" class="flipbook-btn flipbook-audio" data-lang="zh" aria-label="中文朗讀">🔊 中文</button>
         </div>
       </div>
     </section>
@@ -177,38 +180,49 @@
       nextBtn.addEventListener('click', function(){ book.goTo(book.current + 1); });
       pages.forEach(function(img){ img._book = book; });
 
-      var audioBtn = bookEl.querySelector('.flipbook-audio');
+      var audioBtns = bookEl.querySelectorAll('.flipbook-audio');
       var audioBook = bookEl.getAttribute('data-audio-book');
-      if (audioBtn && audioBook){
+      if (audioBtns.length && audioBook){
         var narr = new Audio();
         var narrating = false;
+        var activeLang = null;
+        var LABEL = { en: '🔊 英文', zh: '🔊 中文' };
+        function langOf(b){ return b.getAttribute('data-lang') || 'en'; }
         function stopNarration(){
           narrating = false;
+          activeLang = null;
           narr.pause();
-          audioBtn.textContent = '🔊 朗讀';
-          audioBtn.classList.remove('is-playing');
+          audioBtns.forEach(function(b){ b.textContent = LABEL[langOf(b)]; b.classList.remove('is-playing'); });
         }
-        function playPageAudio(i){
+        function playPageAudio(i, lang){
           var im = pages[i].getAttribute('src').match(/\/([^\/]+)\.(?:jpe?g|png)$/i);
           if (!im){ stopNarration(); return; }
-          narr.src = '../assets/books/' + audioBook + '/' + im[1] + '.mp3';
+          narr.src = '../assets/books/' + audioBook + '/' + im[1] + (lang === 'zh' ? '.zh' : '') + '.mp3';
+          activeLang = lang;
           narr.play().then(function(){
             narrating = true;
-            audioBtn.textContent = '⏸ 停止';
-            audioBtn.classList.add('is-playing');
+            audioBtns.forEach(function(b){
+              var on = langOf(b) === lang;
+              b.textContent = on ? '⏸ 停止' : LABEL[langOf(b)];
+              b.classList.toggle('is-playing', on);
+            });
           }).catch(function(){ stopNarration(); });
         }
         narr.addEventListener('ended', function(){
           if (!narrating) return;
           if (book.current < pages.length - 1){
             book.goTo(book.current + 1);
-            playPageAudio(book.current);
+            playPageAudio(book.current, activeLang);
           } else {
             stopNarration();
           }
         });
-        audioBtn.addEventListener('click', function(){
-          if (narrating) stopNarration(); else playPageAudio(book.current);
+        audioBtns.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var lang = langOf(btn);
+            if (narrating && activeLang === lang) stopNarration();
+            else playPageAudio(book.current, lang);
+          });
         });
         prevBtn.addEventListener('click', stopNarration);
         nextBtn.addEventListener('click', stopNarration);
