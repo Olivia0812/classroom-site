@@ -82,7 +82,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-mustard">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>小豆和美美的颱風天<span class="bi-en">Dou and Mei's Typhoon Day</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="typhoon">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/typhoon/page-01.jpg" alt="小豆和美美的颱風天 封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/typhoon/page-03.jpg" alt="小豆和美美的颱風天 第2頁" />
@@ -98,6 +98,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
     </section>
@@ -107,7 +108,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-mustard">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>小豆和美美的消防演習<span class="bi-en">Dou and Mei's Fire Drill</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="fire">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/fire/page-01.jpg" alt="小豆和美美的消防演習 封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/fire/page-02.jpg" alt="小豆和美美的消防演習 第2頁" />
@@ -123,6 +124,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
     </section>
@@ -187,8 +189,9 @@
           audioBtn.classList.remove('is-playing');
         }
         function playPageAudio(i){
-          var nn = ('0' + (i + 1)).slice(-2);
-          narr.src = '../assets/books/' + audioBook + '/page-' + nn + '.mp3';
+          var im = pages[i].getAttribute('src').match(/\/([^\/]+)\.(?:jpe?g|png)$/i);
+          if (!im){ stopNarration(); return; }
+          narr.src = '../assets/books/' + audioBook + '/' + im[1] + '.mp3';
           narr.play().then(function(){
             narrating = true;
             audioBtn.textContent = '⏸ 停止';

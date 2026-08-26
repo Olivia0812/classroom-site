@@ -51,7 +51,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-coral">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>刺蝟小豆的新朋友<span class="bi-en">Little Hedgehog Dou's New Friend</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="newfriend">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/newfriend/page-01.jpg" alt="刺蝟小豆的新朋友 封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/newfriend/page-02.jpg" alt="刺蝟小豆的新朋友 第2頁" />
@@ -70,6 +70,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 12</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
       <h3>延伸觀看<span class="bi-en">Watch the Story</span></h3>
@@ -81,7 +82,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-coral">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>森林小學的班長選舉<span class="bi-en">Dou and Mei's Class Leader Election</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="election">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/election/page-01.jpg" alt="森林小學的班長選舉 封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/election/page-02.jpg" alt="森林小學的班長選舉 第2頁" />
@@ -96,6 +97,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 8</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
     </section>
@@ -105,7 +107,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-coral">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>小豆和美美說不！<span class="bi-en">Dou and Mei Say No!</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="sayno">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/sayno/page-01.jpg" alt="小豆和美美說不！封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/sayno/page-02.jpg" alt="小豆和美美說不！第2頁" />
@@ -120,6 +122,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 8</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
     </section>
@@ -131,6 +134,7 @@
     var panels = document.querySelectorAll('.subtab-panel');
     tabBtns.forEach(function(btn){
       btn.addEventListener('click', function(){
+        document.querySelectorAll('.flipbook-audio.is-playing').forEach(function(b){ b.click(); });
         tabBtns.forEach(function(b){ b.classList.remove('is-active'); });
         panels.forEach(function(p){ p.hidden = true; });
         btn.classList.add('is-active');
@@ -170,6 +174,44 @@
       prevBtn.addEventListener('click', function(){ book.goTo(book.current - 1); });
       nextBtn.addEventListener('click', function(){ book.goTo(book.current + 1); });
       pages.forEach(function(img){ img._book = book; });
+
+      var audioBtn = bookEl.querySelector('.flipbook-audio');
+      var audioBook = bookEl.getAttribute('data-audio-book');
+      if (audioBtn && audioBook){
+        var narr = new Audio();
+        var narrating = false;
+        function stopNarration(){
+          narrating = false;
+          narr.pause();
+          audioBtn.textContent = '🔊 朗讀';
+          audioBtn.classList.remove('is-playing');
+        }
+        function playPageAudio(i){
+          var im = pages[i].getAttribute('src').match(/\/([^\/]+)\.(?:jpe?g|png)$/i);
+          if (!im){ stopNarration(); return; }
+          narr.src = '../assets/books/' + audioBook + '/' + im[1] + '.mp3';
+          narr.play().then(function(){
+            narrating = true;
+            audioBtn.textContent = '⏸ 停止';
+            audioBtn.classList.add('is-playing');
+          }).catch(function(){ stopNarration(); });
+        }
+        narr.addEventListener('ended', function(){
+          if (!narrating) return;
+          if (book.current < pages.length - 1){
+            book.goTo(book.current + 1);
+            playPageAudio(book.current);
+          } else {
+            stopNarration();
+          }
+        });
+        audioBtn.addEventListener('click', function(){
+          if (narrating) stopNarration(); else playPageAudio(book.current);
+        });
+        prevBtn.addEventListener('click', stopNarration);
+        nextBtn.addEventListener('click', stopNarration);
+      }
+
       render();
       books.push(book);
     });
