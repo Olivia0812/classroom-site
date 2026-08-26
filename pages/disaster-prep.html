@@ -51,7 +51,7 @@
     <section class="content-card">
       <p class="eyebrow eyebrow-mustard">繪本故事<span class="bi-en">Picture Book</span></p>
       <h2>小豆和美美的地震演習<span class="bi-en">Dou and Mei's Earthquake Drill</span></h2>
-      <div class="flipbook">
+      <div class="flipbook" data-audio-book="earthquake">
         <div class="flipbook-viewport">
           <img class="idiom-page flipbook-page" src="../assets/books/earthquake/page-01.jpg" alt="小豆和美美的地震演習 封面" />
           <img class="idiom-page flipbook-page" src="../assets/books/earthquake/page-02.jpg" alt="小豆和美美的地震演習 第2頁" />
@@ -67,6 +67,7 @@
           <button type="button" class="flipbook-btn flipbook-prev" aria-label="上一頁">‹</button>
           <span class="flipbook-counter">1 / 9</span>
           <button type="button" class="flipbook-btn flipbook-next" aria-label="下一頁">›</button>
+          <button type="button" class="flipbook-btn flipbook-audio" aria-label="朗讀這本繪本">🔊 朗讀</button>
         </div>
       </div>
     </section>
@@ -133,6 +134,7 @@
     var panels = document.querySelectorAll('.subtab-panel');
     tabBtns.forEach(function(btn){
       btn.addEventListener('click', function(){
+        document.querySelectorAll('.flipbook-audio.is-playing').forEach(function(b){ b.click(); });
         tabBtns.forEach(function(b){ b.classList.remove('is-active'); });
         panels.forEach(function(p){ p.hidden = true; });
         btn.classList.add('is-active');
@@ -172,6 +174,43 @@
       prevBtn.addEventListener('click', function(){ book.goTo(book.current - 1); });
       nextBtn.addEventListener('click', function(){ book.goTo(book.current + 1); });
       pages.forEach(function(img){ img._book = book; });
+
+      var audioBtn = bookEl.querySelector('.flipbook-audio');
+      var audioBook = bookEl.getAttribute('data-audio-book');
+      if (audioBtn && audioBook){
+        var narr = new Audio();
+        var narrating = false;
+        function stopNarration(){
+          narrating = false;
+          narr.pause();
+          audioBtn.textContent = '🔊 朗讀';
+          audioBtn.classList.remove('is-playing');
+        }
+        function playPageAudio(i){
+          var nn = ('0' + (i + 1)).slice(-2);
+          narr.src = '../assets/books/' + audioBook + '/page-' + nn + '.mp3';
+          narr.play().then(function(){
+            narrating = true;
+            audioBtn.textContent = '⏸ 停止';
+            audioBtn.classList.add('is-playing');
+          }).catch(function(){ stopNarration(); });
+        }
+        narr.addEventListener('ended', function(){
+          if (!narrating) return;
+          if (book.current < pages.length - 1){
+            book.goTo(book.current + 1);
+            playPageAudio(book.current);
+          } else {
+            stopNarration();
+          }
+        });
+        audioBtn.addEventListener('click', function(){
+          if (narrating) stopNarration(); else playPageAudio(book.current);
+        });
+        prevBtn.addEventListener('click', stopNarration);
+        nextBtn.addEventListener('click', stopNarration);
+      }
+
       render();
       books.push(book);
     });

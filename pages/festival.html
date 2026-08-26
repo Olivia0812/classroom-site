@@ -78,6 +78,7 @@
   })();
   </script>
 
+  <script src="../assets/audio/manifest.js"></script>
   <script>
   (function(){
     var AUDIO_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/></svg>';
@@ -197,8 +198,9 @@
     document.addEventListener('click', function(e){
       var btn = e.target.closest('.audio-btn');
       if (!btn) return;
-      var src = btn.getAttribute('data-audio');
       var word = btn.getAttribute('data-word');
+      var src = window.resolveAudioSrc ? window.resolveAudioSrc(word, '../assets/audio/') : null;
+      if (!src){ speak(word); return; }
       var audio = new Audio(src);
       audio.addEventListener('error', function(){ speak(word); });
       audio.play().catch(function(){ speak(word); });

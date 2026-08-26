@@ -127,6 +127,7 @@
     <img class="summary-banner" src="../assets/superpowers-summary.jpg" alt="11 個品格徽章依照 My Heart（心裡的）、My Words（說出口的）、My Hands（做出來的）三種超能力分類的總覽圖" />
   </section>
 
+  <script src="../assets/audio/manifest.js"></script>
   <script>
   (function(){
     function speak(word){
@@ -141,8 +142,9 @@
       btn.addEventListener('click', function(e){
         e.preventDefault();
         e.stopPropagation();
-        var src = btn.getAttribute('data-audio');
         var word = btn.getAttribute('data-word');
+        var src = window.resolveAudioSrc ? window.resolveAudioSrc(word, '../assets/audio/') : null;
+        if (!src){ speak(word); return; }
         var audio = new Audio(src);
         audio.addEventListener('error', function(){ speak(word); });
         audio.play().catch(function(){ speak(word); });

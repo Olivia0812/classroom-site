@@ -312,6 +312,7 @@
   })();
   </script>
 
+  <script src="../assets/audio/manifest.js"></script>
   <script>
   (function(){
     function speak(word){
@@ -324,8 +325,9 @@
     }
     document.querySelectorAll('.audio-btn').forEach(function(btn){
       btn.addEventListener('click', function(){
-        var src = btn.getAttribute('data-audio');
         var word = btn.getAttribute('data-word');
+        var src = window.resolveAudioSrc ? window.resolveAudioSrc(word, '../assets/audio/') : null;
+        if (!src){ speak(word); return; }
         var audio = new Audio(src);
         audio.addEventListener('error', function(){ speak(word); });
         audio.play().catch(function(){ speak(word); });

@@ -434,6 +434,12 @@ body.scene-friendly-campus{ --scene-img: url('assets/scene-friendly-campus.jpg')
 .flipbook-btn:hover:not(:disabled){ transform:translateY(-2px); }
 .flipbook-btn:disabled{ opacity:.35; cursor:default; }
 .flipbook-counter{ font-weight:700; color:var(--ink-soft); min-width:4rem; text-align:center; }
+.flipbook-audio{
+  width:auto; height:44px; padding:0 1.15rem; border-radius:22px;
+  gap:.4rem; font-size:1rem; font-weight:700;
+  background:var(--pine); color:var(--pine-ink);
+}
+.flipbook-audio.is-playing{ background:var(--coral); color:var(--coral-ink); }
 
 /* ---------- lightbox (click-to-zoom for lesson/idiom images) ---------- */
 .lightbox-overlay{
